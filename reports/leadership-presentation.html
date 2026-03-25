@@ -401,7 +401,7 @@
   </div>
 
   <p style="font-size:13px; color:var(--text-muted); margin-top:32px;">
-    Scope: Soccer only &bull; Pre-match &bull; USD &bull; en-US &bull; Web (desktop + mobile) &bull; 4 brands
+    v1.55: Straights only &bull; v1.6: + Parlay + SGP + Mega &bull; Soccer &bull; Pre-match &bull; USD &bull; en-US &bull; 4 brands
   </p>
   <div class="slide-number">1 / 17</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
@@ -596,7 +596,7 @@
 <!-- SLIDE 6: DELIVERABLE 2 -->
 <div class="slide">
   <h2 style="color:var(--accent-green);">Deliverable 2: Betslip Core & Placement Flow</h2>
-  <div class="demo-quote">Demo: Punter builds a betslip (straight + parlay + SGP), places a bet, gets validated against limits. Operator controls who can bet.</div>
+  <div class="demo-quote">Demo: v1.55 — Punter places a straight bet with full validation. v1.6 — adds parlay, SGP, Mega Parlay. Operator controls limits and kill switch.</div>
 
   <div style="display:flex; flex-direction:column; gap:10px;">
     <div class="team-row">
@@ -864,34 +864,60 @@
 
 <!-- SLIDE 11: SCOPE -->
 <div class="slide">
-  <h2>Scope: In vs Out (v1.55)</h2>
+  <h2>Scope: v1.55 → v1.6 → Future</h2>
 
-  <div class="grid-2" style="gap:32px;">
+  <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:20px;">
+    <!-- v1.55 -->
     <div>
-      <h3 style="color:var(--accent-green);">In Scope — Must Have</h3>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="tag tag-green" style="font-size:11px;">v1.55 — Straight Bets</span>
+        <span style="font-size:10px; color:var(--accent-green); font-weight:600;">NOW</span>
+      </div>
       <div class="scope-list" style="columns:1;">
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> <strong>Straight Bets only</strong> (single selection)</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Pre-match betting on World Cup fixtures</div>
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Straight, Simple Parlay, SGP, Mega Parlay</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Real settlement from OpticOdds results</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Operator controls (kill switch, limits, manual settle)</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Bet Ticker, Liability, Audit Trail in Splunk</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Web desktop + mobile responsive</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> 4 brands, USD, en-US</div>
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> 5,000 bets/min throughput</div>
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> 500ms odds latency end-to-end</div>
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> 99.9% uptime target</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> 5,000 bets/min | 500ms latency | 99.9% uptime</div>
       </div>
-
-      <h3 style="color:var(--accent-amber); margin-top:20px;">Should Have</h3>
-      <div class="scope-list" style="columns:1;">
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-amber);">~</span> In-Play betting</div>
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-amber);">~</span> Futures betting (straights only)</div>
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-amber);">~</span> Fractional odds format</div>
+      <div style="margin-top:12px; padding:8px 12px; background:rgba(248,113,113,0.06); border:1px solid rgba(248,113,113,0.15); border-radius:6px;">
+        <div style="font-size:10px; font-weight:600; color:var(--accent-red); margin-bottom:4px;">Reduced for v1.55</div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-red);">!</span> <span style="font-size:11px;">Traders Hub UI — API only</span></div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-red);">!</span> <span style="font-size:11px;">Limits config — absorbed into Betting</span></div>
       </div>
     </div>
 
+    <!-- v1.6 -->
     <div>
-      <h3 style="color:var(--text-muted);">Out of Scope (v1.7+)</h3>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="tag tag-blue" style="font-size:11px;">v1.6 — Full Bet Types</span>
+        <span style="font-size:10px; color:var(--accent-blue); font-weight:600;">NEXT</span>
+      </div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:10px;">Everything in v1.55, plus:</div>
+      <div class="scope-list" style="columns:1;">
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> <strong>Simple Parlay</strong> (multi-fixture, 2-12 legs)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> <strong>SGP</strong> (same-game parlay, correlated pricing)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> <strong>Mega Parlay</strong> (SGPs + straights combined)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> Settlement for all bet types</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> Advanced limit validations per bet type</div>
+      </div>
+      <div style="margin-top:12px; padding:8px 12px; background:rgba(251,191,36,0.06); border:1px solid rgba(251,191,36,0.15); border-radius:6px;">
+        <div style="font-size:10px; font-weight:600; color:var(--accent-amber); margin-bottom:4px;">Should Have (v1.6)</div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-amber);">~</span> <span style="font-size:11px;">In-Play betting</span></div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-amber);">~</span> <span style="font-size:11px;">Futures betting (straights only)</span></div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-amber);">~</span> <span style="font-size:11px;">Fractional odds format</span></div>
+      </div>
+    </div>
+
+    <!-- Future -->
+    <div>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="tag" style="font-size:11px; background:rgba(100,116,139,0.15); color:#94a3b8;">v1.7+ / v2.0+</span>
+        <span style="font-size:10px; color:var(--text-muted); font-weight:600;">LATER</span>
+      </div>
       <div class="scope-list" style="columns:1;">
         <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Multi-currency</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Multi-language</div>
@@ -902,12 +928,6 @@
         <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Per-punter value factors</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Automated dispute dashboard</div>
         <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Other sports</div>
-      </div>
-
-      <h3 style="color:var(--accent-red); margin-top:20px;">Reduced for v1.55</h3>
-      <div class="scope-list" style="columns:1;">
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-red);">!</span> Traders Hub UI — API only, no UI for MVP</div>
-        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-red);">!</span> BackOffice for limits — settings absorbed into Betting directly</div>
       </div>
     </div>
   </div>
