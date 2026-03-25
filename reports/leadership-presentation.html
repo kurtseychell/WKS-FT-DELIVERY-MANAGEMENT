@@ -1077,11 +1077,17 @@
         <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">Owner: <strong style="color:var(--text-secondary);">Team Refine</strong></div>
       </div>
       <div style="color:var(--text-muted); font-size:18px; padding:0 4px;">&#9654;</div>
-      <!-- Team Execution -->
-      <div style="flex:1; text-align:center;">
-        <div style="background:linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.1)); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:12px 8px;">
+      <!-- Team Execution — 3 environments -->
+      <div style="flex:1.6; text-align:center;">
+        <div style="background:linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.1)); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:10px 6px;">
           <div style="font-size:13px; font-weight:700; color:var(--accent-green);">Team Execution</div>
-          <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Sprints & Demos</div>
+          <div style="display:flex; gap:4px; margin-top:6px; justify-content:center;">
+            <div style="padding:3px 8px; background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.2); border-radius:4px; font-size:9px; color:var(--accent-green); font-weight:600;">AWS Stage</div>
+            <span style="color:var(--text-muted); font-size:10px; align-self:center;">&#9654;</span>
+            <div style="padding:3px 8px; background:rgba(79,140,255,0.1); border:1px solid rgba(79,140,255,0.2); border-radius:4px; font-size:9px; color:var(--accent-blue); font-weight:600;">PPD</div>
+            <span style="color:var(--text-muted); font-size:10px; align-self:center;">&#9654;</span>
+            <div style="padding:3px 8px; background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.2); border-radius:4px; font-size:9px; color:var(--accent-amber); font-weight:600;">Production</div>
+          </div>
         </div>
         <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">Owner: <strong style="color:var(--text-secondary);">Team Execution</strong></div>
       </div>
@@ -1161,8 +1167,10 @@
       <th style="text-align:center; background:rgba(79,140,255,0.08); min-width:90px;">Architecture</th>
       <th style="text-align:center; background:rgba(251,191,36,0.08); min-width:90px; border-left:2px solid var(--accent-amber); border-right:2px solid var(--accent-amber);">Software Design</th>
       <th style="text-align:center; background:rgba(34,211,238,0.08); min-width:90px;">Team Refine</th>
-      <th style="text-align:center; background:rgba(52,211,153,0.08); min-width:90px;">Execution</th>
-      <th style="text-align:center; min-width:100px;">ETA / Iteration</th>
+      <th style="text-align:center; background:rgba(52,211,153,0.04); min-width:70px; border-left:2px solid rgba(52,211,153,0.3);">AWS Stage</th>
+      <th style="text-align:center; background:rgba(52,211,153,0.06); min-width:70px;">PPD</th>
+      <th style="text-align:center; background:rgba(52,211,153,0.08); min-width:70px; border-right:2px solid rgba(52,211,153,0.3);">Production</th>
+      <th style="text-align:center; min-width:90px;">ETA / Iteration</th>
     </tr>
     <!-- SA-15 Straight Bet — DONE -->
     <tr>
@@ -1172,7 +1180,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
-      <td style="text-align:center;"><span class="status-pill status-done">Complete</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(52,211,153,0.15);"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-right:2px solid rgba(52,211,153,0.15);"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; font-size:10px; color:var(--accent-green);">Delivered</td>
     </tr>
     <!-- SA-66 Central Offer -->
@@ -1183,7 +1193,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <!-- SA-14 WC Hub -->
@@ -1194,7 +1206,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <!-- SA-17 Simple Parlay -->
@@ -1216,7 +1230,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <!-- SA-20 Bet Placement Controls -->
@@ -1227,7 +1243,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <!-- Data/Reporting WPs — grouped -->
@@ -1238,7 +1256,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <tr>
@@ -1248,7 +1268,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <tr>
@@ -1258,7 +1280,9 @@
       <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <!-- Ready for Handover WPs -->
@@ -1269,7 +1293,9 @@
       <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <tr style="background:rgba(79,140,255,0.03);">
@@ -1279,7 +1305,9 @@
       <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <tr style="background:rgba(79,140,255,0.03);">
@@ -1289,7 +1317,9 @@
       <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <tr style="background:rgba(79,140,255,0.03);">
@@ -1299,7 +1329,9 @@
       <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
     </tr>
     <!-- Scope Validation WPs -->
@@ -1310,7 +1342,9 @@
       <td style="text-align:center; color:var(--text-muted);">—</td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--accent-red);">Blocked</td>
     </tr>
     <tr style="background:rgba(251,191,36,0.03);">
@@ -1320,7 +1354,9 @@
       <td style="text-align:center; color:var(--text-muted);">—</td>
       <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
       <td style="text-align:center; font-size:10px; color:var(--accent-red);">Blocked</td>
     </tr>
   </table>
@@ -1629,7 +1665,7 @@
     </div>
   </div>
 
-  <div class="slide-number">15 / 16</div>
+  <div class="slide-number">16 / 16</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
