@@ -6,7 +6,9 @@
 <title>Sportsbook Programme — World Cup MVP Delivery Plan</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   :root {
     --bg-dark: #0f1117;
     --bg-card: #1a1d27;
@@ -23,239 +25,2165 @@
     --text-muted: #64748b;
     --border: #2d3348;
   }
-  body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.5; }
-  .slide { width: 1280px; min-height: 720px; margin: 0 auto 40px; padding: 48px 56px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 12px; page-break-after: always; position: relative; overflow: hidden; }
-  .slide::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan)); }
-  .slide-number { position: absolute; bottom: 24px; right: 40px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
-  .footer-brand { position: absolute; bottom: 24px; left: 56px; font-size: 12px; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; }
-  h1 { font-size: 42px; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; background: linear-gradient(135deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  h2 { font-size: 28px; font-weight: 700; margin-bottom: 24px; letter-spacing: -0.5px; }
-  h3 { font-size: 16px; font-weight: 600; color: var(--accent-blue); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .subtitle { font-size: 20px; color: var(--text-secondary); font-weight: 400; margin-bottom: 32px; }
-  .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  .slide {
+    width: 1280px;
+    min-height: 720px;
+    margin: 0 auto 40px;
+    padding: 48px 56px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan));
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 24px;
+    right: 40px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .footer-brand {
+    position: absolute;
+    bottom: 24px;
+    left: 56px;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
   .tag-blue { background: rgba(79,140,255,0.15); color: var(--accent-blue); }
   .tag-green { background: rgba(52,211,153,0.15); color: var(--accent-green); }
   .tag-amber { background: rgba(251,191,36,0.15); color: var(--accent-amber); }
   .tag-red { background: rgba(248,113,113,0.15); color: var(--accent-red); }
   .tag-purple { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+  .tag-cyan { background: rgba(34,211,238,0.15); color: var(--accent-cyan); }
+
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
-  .status-pill { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .card-highlight {
+    border-left: 3px solid var(--accent-blue);
+  }
+
+  .metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .metric-value {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .metric-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(45,51,72,0.5);
+    color: var(--text-secondary);
+    vertical-align: top;
+  }
+  tr:hover td { background: rgba(79,140,255,0.03); }
+  td:first-child { color: var(--text-primary); font-weight: 500; }
+
+  .status-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
   .status-delivery { background: rgba(52,211,153,0.15); color: var(--accent-green); }
   .status-handover { background: rgba(79,140,255,0.15); color: var(--accent-blue); }
   .status-scope { background: rgba(251,191,36,0.15); color: var(--accent-amber); }
   .status-done { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { text-align: left; padding: 10px 12px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); border-bottom: 1px solid var(--border); background: var(--bg-card); }
-  td { padding: 10px 12px; border-bottom: 1px solid rgba(45,51,72,0.5); color: var(--text-secondary); vertical-align: top; }
+
+  .bar-chart { display: flex; align-items: end; gap: 12px; height: 140px; margin-top: 16px; }
+  .bar-item { display: flex; flex-direction: column; align-items: center; flex: 1; }
+  .bar {
+    width: 100%;
+    max-width: 60px;
+    border-radius: 6px 6px 0 0;
+    transition: height 0.3s;
+  }
+  .bar-label { font-size: 11px; color: var(--text-muted); margin-top: 8px; text-align: center; }
+  .bar-value { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+
+  .dep-arrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .dep-arrow .from { color: var(--accent-blue); font-weight: 600; }
+  .dep-arrow .arrow { color: var(--text-muted); }
+  .dep-arrow .to { color: var(--accent-cyan); font-weight: 600; }
+  .dep-arrow .blocks { color: var(--accent-red); font-size: 11px; }
+
+  .risk-row {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(45,51,72,0.5);
+    align-items: flex-start;
+  }
+  .risk-severity {
+    min-width: 56px;
+    padding: 4px 0;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .severity-high { background: rgba(248,113,113,0.15); color: var(--accent-red); }
+  .severity-med { background: rgba(251,191,36,0.15); color: var(--accent-amber); }
+
+  .timeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 24px 0;
+    position: relative;
+  }
+  .timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .timeline-line {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    right: -50%;
+    height: 2px;
+    background: var(--border);
+  }
+  .timeline-date { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+  .timeline-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  .scope-list { columns: 2; gap: 32px; }
+  .scope-item {
+    display: flex;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 13px;
+    break-inside: avoid;
+  }
+  .scope-icon { font-size: 14px; min-width: 20px; }
+
+  .demo-quote {
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent-cyan);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  .team-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .team-badge {
+    min-width: 100px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .team-feeds { background: rgba(251,191,36,0.12); color: var(--accent-amber); }
+  .team-offer { background: rgba(167,139,250,0.12); color: var(--accent-purple); }
+  .team-frontend { background: rgba(34,211,238,0.12); color: var(--accent-cyan); }
+  .team-betting { background: rgba(248,113,113,0.12); color: var(--accent-red); }
+  .team-data { background: rgba(52,211,153,0.12); color: var(--accent-green); }
+  .team-bo { background: rgba(251,191,36,0.12); color: var(--accent-amber); }
+  .team-splunk { background: rgba(79,140,255,0.12); color: var(--accent-blue); }
+
+  .team-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 4px 0;
+    line-height: 1.4;
+  }
+  .team-wps {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .zoom-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(45,51,72,0.5);
+  }
+  .zoom-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .zoom-active { background: var(--accent-blue); color: white; }
+  .zoom-pending { background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border); }
+
+  @media print {
+    .slide { margin: 0; border: none; border-radius: 0; page-break-after: always; }
+    body { background: white; }
+  }
 </style>
 </head>
 <body>
+<body>
+
+<!-- SLIDE 1: TITLE -->
 <div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
   <div style="margin-bottom:12px;">
     <span class="tag tag-blue">Confidential</span>
     <span class="tag tag-purple">March 2026</span>
-    <div class="slide-number">1 / 10</div>
-  <div class="footer-brand">WKS FT Sportsbook Unit</div>
-</div>
+  </div>
   <h1 style="font-size:52px; margin-bottom:16px;">Sportsbook Programme</h1>
   <p style="font-size:24px; color:var(--text-secondary); font-weight:300; margin-bottom:40px;">World Cup MVP Delivery Plan</p>
-  <div style="font-size:13px; color:var(--text-muted); margin-top:32px;">WKS FT Sportsbook Unit</div>
-</div>\n<div class="slide">
-  <h2>Summary of Updates — 31 Mar 2026</h2>
-  <p class="subtitle">Key progress reflected from Jira SBK-669 Initiative and contributing Epics.</p>
-  <div class="grid-2">
-    <div class="card" style="border-left:3px solid var(--accent-green);">
-      <h3 style="color:var(--accent-green);">Significant Progress</h3>
-      <ul style="font-size:14px; color:var(--text-secondary); padding-left:20px; margin-top:10px;">
-        <li style="margin-bottom:8px;"><strong style="color:var(--text-primary);">Overall Program:</strong> Jumped from 23% to <span style="color:var(--accent-green); font-weight:800;">59% complete</span>.</li>
-        <li style="margin-bottom:8px;"><strong style="color:var(--text-primary);">Simple Parlay (SBK-2199):</strong> Now <span style="color:var(--accent-green); font-weight:800;">85% complete</span>.</li>
-        <li style="margin-bottom:8px;"><strong style="color:var(--text-primary);">Market Parser (SBK-1897):</strong> Reached <span style="color:var(--accent-green); font-weight:800;">91% complete</span>.</li>
-      </ul>
-      <div class="slide-number">2 / 10</div>
+
+  <div class="grid-3" style="width:100%; max-width:800px; margin-top:20px;">
+    <div class="metric-card">
+      <div class="metric-value" style="color:var(--accent-blue);">16</div>
+      <div class="metric-label">Work Packages</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value" style="color:var(--accent-green);">4</div>
+      <div class="metric-label">Deliverables</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value" style="color:var(--accent-amber);">8</div>
+      <div class="metric-label">Domain Teams</div>
+    </div>
+  </div>
+
+  <div class="timeline" style="width:100%; max-width:900px; margin-top:48px;">
+    <div class="timeline-item">
+      <div class="timeline-line"></div>
+      <div class="timeline-dot" style="background:var(--accent-green);"></div>
+      <div class="timeline-date">Apr 1</div>
+      <div class="timeline-label">Soft Launch</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-line"></div>
+      <div class="timeline-dot" style="background:var(--accent-blue);"></div>
+      <div class="timeline-date">May 1</div>
+      <div class="timeline-label">Go-Live</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-line"></div>
+      <div class="timeline-dot" style="background:var(--accent-amber);"></div>
+      <div class="timeline-date">Mid-June</div>
+      <div class="timeline-label">World Cup Kick-Off</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:var(--text-muted); margin-top:32px;">
+    v1.55: Straights only &bull; v1.6: + Parlay + SGP + Mega &bull; Soccer &bull; Pre-match &bull; USD &bull; en-US &bull; 4 brands
+  </p>
+  <div class="slide-number">1 / 19</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
+
+<!-- SLIDE 2: DELIVERY STRUCTURE -->
+<div class="slide">
+  <h2>4 Deliverables — Each a Demoable Increment</h2>
+  <p class="subtitle">The programme is structured so each deliverable adds visible business value across all teams in parallel.</p>
+
+  <div class="grid-2">
     <div class="card" style="border-left:3px solid var(--accent-blue);">
-      <h3 style="color:var(--accent-blue);">Key Milestone Updates</h3>
-      <ul style="font-size:14px; color:var(--text-secondary); padding-left:20px; margin-top:10px;">
-        <li style="margin-bottom:8px;"><strong style="color:var(--text-primary);">Central Offer (SBK-3006):</strong> Moved to <span style="color:var(--accent-blue); font-weight:800;">59% complete</span>.</li>
-        <li style="margin-bottom:8px;"><strong style="color:var(--text-primary);">Settlement (SBK-2200):</strong> Progressed to <span style="color:var(--accent-green); font-weight:800;">67% complete</span>.</li>
-      </ul>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="margin:0; color:var(--accent-blue);">1. Central Offering Foundation</h3>
+        <span class="tag tag-blue">Offer</span>
+      </div>
+      <p style="font-size:15px; color:var(--text-primary); margin-bottom:8px;">Punter opens the sportsbook and browses World Cup fixtures with live odds</p>
+      <p style="font-size:12px; color:var(--text-muted);">6 WPs &bull; FEEDS, OFFER, FRONTEND, BETTING, DATA</p>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--accent-green);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="margin:0; color:var(--accent-green);">2. Betslip Core & Placement</h3>
+        <span class="tag tag-green">Betting</span>
+      </div>
+      <p style="font-size:15px; color:var(--text-primary); margin-bottom:8px;">Punter builds a bet, places it, gets validated. Operator controls limits and kill switch</p>
+      <p style="font-size:12px; color:var(--text-muted);">11 WPs &bull; FRONTEND, BETTING, OFFER, DATA</p>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--accent-purple);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="margin:0; color:var(--accent-purple);">3. My Bets & Real Data</h3>
+        <span class="tag tag-purple">Settlement</span>
+      </div>
+      <p style="font-size:15px; color:var(--text-primary); margin-bottom:8px;">Bets settle from real results. Real money moves. Punter sees bet history live</p>
+      <p style="font-size:12px; color:var(--text-muted);">10 WPs &bull; BETTING, DATA, FRONTEND, FEEDS, OFFER</p>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--accent-amber);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="margin:0; color:var(--accent-amber);">4. Operation Control & Visibility</h3>
+        <span class="tag tag-amber">Operations</span>
+      </div>
+      <p style="font-size:15px; color:var(--text-primary); margin-bottom:8px;">Traders manage the book via Kraken. Splunk dashboards show the full operational picture</p>
+      <p style="font-size:12px; color:var(--text-muted);">14 WPs &bull; BACKOFFICE, BETTING, DATA, SPLUNK</p>
     </div>
   </div>
-</div>\n<div class="slide">
-  <h1>Executive Program Roadmap</h1>
-  <p class="subtitle">Consolidated view of delivery phases and business-critical milestones.</p>
-  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
-    <div class="card" style="border-left:5px solid var(--accent-purple); padding:20px;">
-      <h3 style="color:var(--accent-purple);">Phase 1: Foundation (MAY 15)</h3>
-      <p style="font-size:14px; color:var(--text-secondary);">Core ingestion and market models ready.</p>
-      <div class="slide-number">3 / 10</div>
+
+  <div class="slide-number">2 / 19</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
-    <div class="card" style="border-left:5px solid var(--accent-green); padding:20px;">
-      <h3 style="color:var(--accent-green);">Phase 2: Betting Core (JUN 01)</h3>
-      <p style="font-size:14px; color:var(--text-secondary);">Straight and Parlay placement enabled.</p>
-    </div>
-    <div class="card" style="border-left:5px solid var(--accent-blue); padding:20px;">
-      <h3 style="color:var(--accent-blue);">Phase 3: Lifecycle (JUN 01)</h3>
-      <p style="font-size:14px; color:var(--text-secondary);">Settlement and punter history visibility.</p>
-    </div>
-    <div class="card" style="border-left:5px solid var(--accent-amber); padding:20px;">
-      <h3 style="color:var(--accent-amber);">Phase 4: Ops & Visibility (JUN 01)</h3>
-      <p style="font-size:14px; color:var(--text-secondary);">Trading dashboards and risk controls.</p>
-    </div>
+
+<!-- SLIDE 3: 16 WORK PACKAGES -->
+<div class="slide">
+  <h2>16 Work Packages</h2>
+  <p class="subtitle">Each WP is a scoped, architecture-reviewed unit of work delivering a specific business capability.</p>
+
+  <div class="grid-2" style="gap:10px;">
+    <table>
+      <tr><th>#</th><th>Work Package</th><th>What It Delivers</th></tr>
+      <tr><td>1</td><td>Simple Parlay</td><td>Combine bets from different matches</td></tr>
+      <tr><td>2</td><td>Soccer WC Hub</td><td>World Cup landing page with fixtures & markets</td></tr>
+      <tr><td>3</td><td>Settlement</td><td>Auto-grade and settle bets from real results</td></tr>
+      <tr><td>4</td><td>Book On/Off Switch</td><td>Emergency kill switch + punter blocking</td></tr>
+      <tr><td>5</td><td>Bet Placement Controls</td><td>Stake limits, payout caps, odds validation</td></tr>
+      <tr><td>6</td><td>Central Offer Foundation</td><td>Own our offer data, not the feed provider's</td></tr>
+      <tr><td>7</td><td>Bet Ticker</td><td>Live bet feed for traders</td></tr>
+      <tr><td>8</td><td>RT Liability</td><td>Real-time book exposure by market</td></tr>
+    </table>
+    <table>
+      <tr><th>#</th><th>Work Package</th><th>What It Delivers</th></tr>
+      <tr><td>9</td><td>Manual Resettlement</td><td>Traders correct grading errors and void bets</td></tr>
+      <tr><td>10</td><td>Audit Trail</td><td>Who changed what, when, why</td></tr>
+      <tr><td>11</td><td>RT Odds Display</td><td>Live odds updates + suspended market indicators</td></tr>
+      <tr><td>12</td><td>My Bets</td><td>Punter checks active and settled bets</td></tr>
+      <tr><td>13</td><td>Bet History</td><td>Traders investigate punter betting activity</td></tr>
+      <tr><td>14</td><td>SGP</td><td>Same-game parlay with correlated pricing</td></tr>
+      <tr><td>15</td><td>Mega Parlay</td><td>SGPs + straights across matches — premium bet</td></tr>
+      <tr><td>16</td><td>Feed Health</td><td>Detect unhealthy feeds, protect from stale data</td></tr>
+    </table>
   </div>
-  <div style="margin-top:40px; padding:24px; border:2px solid var(--accent-amber); border-radius:12px; display:flex; align-items:center; gap:32px;">
-    <div>
-      <div style="font-size:12px; color:var(--accent-amber); font-weight:800;">CRITICAL MILESTONE</div>
-      <div style="font-size:32px; font-weight:900;">MAY 15</div>
-    </div>
-    <div>
-      <div style="font-size:20px; font-weight:800; color:var(--accent-amber);">Parlay Switch in Hidden Prod</div>
-      <div style="font-size:14px; color:var(--text-secondary);">Validation of the new betting engine in live production.</div>
-    </div>
-  </div>
-</div>\n<div class="slide">
-  <h2>Timeline: Phase 1 — Offering Foundation</h2>
-  <p class="subtitle">Committed Delivery Date: May 15, 2026</p>
-  <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Central Offer Foundation (SBK-3006)  <div class="slide-number">4 / 10</div>
+
+  <div class="slide-number">3 / 19</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:10%; width:60%; background:var(--accent-purple); height:100%; border-radius:5px;"></div>
-      </div>
+
+<!-- SLIDE 4: JIRA STATUS -->
+<div class="slide">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+    <h2 style="margin:0;">Work Package Status</h2>
+    <span class="tag tag-blue">Live from Jira &bull; 31 Mar 2026</span>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:24px;">
+    <div class="metric-card">
+      <div class="metric-value" style="color:var(--accent-purple);">1</div>
+      <div class="metric-label">Completed</div>
     </div>
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Market Parser (SBK-1897)</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:15%; width:70%; background:var(--accent-purple); height:100%; border-radius:5px;"></div>
-      </div>
+    <div class="metric-card">
+      <div class="metric-value" style="color:var(--accent-green);">12</div>
+      <div class="metric-label">In Delivery</div>
     </div>
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Soccer World Cup Hub (SBK-2189)</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:10%; width:65%; background:var(--accent-purple); height:100%; border-radius:5px;"></div>
-      </div>
+    <div class="metric-card">
+      <div class="metric-value" style="color:var(--accent-blue);">3</div>
+      <div class="metric-label">Ready for Handover</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value" style="color:var(--accent-amber);">2</div>
+      <div class="metric-label">Scope Validation</div>
     </div>
   </div>
-</div>\n<div class="slide">
-  <h2>Timeline: Phase 2 — Betting Core</h2>
-  <p class="subtitle">Committed Delivery Date: June 01, 2026</p>
-  <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Simple Parlay Core (SBK-2199)  <div class="slide-number">5 / 10</div>
-  <div class="footer-brand">WKS FT Sportsbook Unit</div>
-</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:10%; width:75%; background:var(--accent-green); height:100%; border-radius:5px;"></div>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Bet Placement Controls (SBK-2202)</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:40%; width:50%; background:var(--accent-green); height:100%; border-radius:5px;"></div>
-      </div>
-    </div>
-  </div>
-</div>\n<div class="slide">
-  <h2>Timeline: Phase 3 — Post-Bet Transparency</h2>
-  <p class="subtitle">Committed Delivery Date: June 01, 2026</p>
-  <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Settlement from Optic Odds (SBK-2200)  <div class="slide-number">6 / 10</div>
-  <div class="footer-brand">WKS FT Sportsbook Unit</div>
-</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:20%; width:70%; background:var(--accent-blue); height:100%; border-radius:5px;"></div>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Manual Resettlement & Void (SBK-2215)</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:50%; width:45%; background:var(--accent-blue); height:100%; border-radius:5px;"></div>
-      </div>
-    </div>
-  </div>
-</div>\n<div class="slide">
-  <h2>Timeline: Phase 4 — Ops & Visibility</h2>
-  <p class="subtitle">Committed Delivery Date: June 01, 2026</p>
-  <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Bet Ticker / History Dataset (DATA-22)  <div class="slide-number">7 / 10</div>
-  <div class="footer-brand">WKS FT Sportsbook Unit</div>
-</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:15%; width:80%; background:var(--accent-amber); height:100%; border-radius:5px;"></div>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; height:30px;">
-      <div style="min-width:300px;">Audit Trail (SBK-2220)</div>
-      <div style="flex:1; background:rgba(45,51,72,0.3); border-radius:5px; height:15px; position:relative;">
-        <div style="position:absolute; left:10%; width:85%; background:var(--accent-amber); height:100%; border-radius:5px;"></div>
-      </div>
-    </div>
-  </div>
-</div>\n<div class="slide">
-  <h2>Work Package Status (Detailed)</h2>
-  <table style="font-size:11px;">
-    <tr><th>#</th><th>Jira</th><th>Work Package</th><th>Status</th><th>Target</th></tr>
-    <tr><td>6</td><td>SA-66</td><td>Central Offer Foundation</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>Mid-April</td></tr>
-    <tr><td>1</td><td>SA-17</td><td>Simple Parlay</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>Late April</td></tr>
-    <tr><td>2</td><td>SA-14</td><td>Soccer World Cup Hub</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>Late April</td></tr>
-    <tr><td>3</td><td>SA-22</td><td>Settlement from OO</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>Early May</td></tr>
-    <tr><td>5</td><td>SA-20</td><td>Bet Placement Controls</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>Mid-May</td></tr>
-    <tr><td>10</td><td>SA-28</td><td>Audit Trail</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>Late May</td></tr>
+
+  <table style="font-size:12px;">
+    <tr><th>#</th><th>Jira</th><th>Work Package</th><th>Status</th><th>Contributors</th></tr>
+    <tr><td>—</td><td>SA-15</td><td>Straight Bet</td><td><span class="status-pill status-done">Post-Delivery</span></td><td>SBK, WBS</td></tr>
+    <tr><td>6</td><td>SA-66</td><td>Central Offer Foundation</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK</td></tr>
+    <tr><td>2</td><td>SA-14</td><td>Soccer World Cup Hub</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>DATA, SBK, WBS</td></tr>
+    <tr><td>1</td><td>SA-17</td><td>Simple Parlay</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK, WBS, WLT</td></tr>
+    <tr><td>3</td><td>SA-22</td><td>Settlement from Optic Odds</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK, WLT</td></tr>
+    <tr><td>5</td><td>SA-20</td><td>Bet Placement Controls</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK, WBS</td></tr>
+    <tr><td>7</td><td>SA-25</td><td>Bet Ticker</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>DATA, SBK</td></tr>
+    <tr><td>8</td><td>SA-24</td><td>RT Liability Reporting</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>DATA, SBK</td></tr>
+    <tr><td>13</td><td>SA-26</td><td>Bet History</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>BO, DATA, SBK</td></tr>
+    <tr><td>12</td><td>SA-27</td><td>My Bets</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK, WBS</td></tr>
+    <tr><td>16</td><td>SA-71</td><td>Feed Provider Health</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK</td></tr>
+    <tr><td>11</td><td>SA-19</td><td>RT Odds & Market Display</td><td><span class="status-pill status-handover">Ready for Handover</span></td><td>SBK, WBS</td></tr>
+    <tr><td>4</td><td>SA-21</td><td>Book & Player On/Off Switch</td><td><span class="status-pill status-handover">Ready for Handover</span></td><td>BO, DATA, PAM, SBK, WBS</td></tr>
+    <tr><td>9</td><td>SA-23</td><td>Manual Resettlement & Void</td><td><span class="status-pill status-handover">Ready for Handover</span></td><td>BO, DATA, SBK</td></tr>
+    <tr><td>10</td><td>SA-28</td><td>Audit Trail</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK</td></tr>
+    <tr style="background:rgba(251,191,36,0.03);"><td>14</td><td>SA-16</td><td>SGP</td><td><span class="status-pill status-scope">Scope Validation</span></td><td>SBK, WBS</td></tr>
+    <tr style="background:rgba(251,191,36,0.03);"><td>15</td><td>SA-18</td><td>Mega Parlay</td><td><span class="status-pill status-scope">Scope Validation</span></td><td>SBK, WBS</td></tr>
   </table>
-</div>\n<div class="slide">
-  <h2>Epic Progress Per Work Package</h2>
-  <p class="subtitle">Live ticket synchronization (Total: 139 tickets)</p>
-  <div style="display:flex; flex-direction:column; gap:12px;">
-    <div class="card">
-      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-        <span>[BE] Simple Parlay (SBK-2199)</span>
-        <span style="font-weight:800; color:var(--accent-green);">85%</span>
-        <div class="slide-number">9 / 10</div>
+
+  <div class="slide-number">4 / 19</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
-      <div style="height:10px; background:var(--bg-dark); border-radius:5px; overflow:hidden;">
-        <div style="width:85%; background:var(--accent-green); height:100%;"></div>
+
+<!-- SLIDE 5: DELIVERABLE 1 -->
+<div class="slide">
+  <h2 style="color:var(--accent-blue);">Deliverable 1: Central Offering Foundation</h2>
+  <div class="demo-quote">Demo: Punter opens the sportsbook, sees World Cup fixtures, browses markets, odds update in real-time.</div>
+
+  <div style="display:flex; flex-direction:column; gap:10px;">
+    <div class="team-row">
+      <div class="team-badge team-feeds">FEEDS</div>
+      <div>
+        <div class="team-desc">World Cup data flows from OpticOdds into our system. No feed = no sportsbook. Health monitoring protects from stale data.</div>
+        <div class="team-wps">WP 2, 6, 11, 16</div>
       </div>
     </div>
-    <div class="card">
-      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-        <span>Market Parser (SBK-1897)</span>
-        <span style="font-weight:800; color:var(--accent-green);">91%</span>
-      </div>
-      <div style="height:10px; background:var(--bg-dark); border-radius:5px; overflow:hidden;">
-        <div style="width:91%; background:var(--accent-green); height:100%;"></div>
+    <div class="team-row">
+      <div class="team-badge team-offer">OFFER</div>
+      <div>
+        <div class="team-desc">We own our offer — not a pass-through of OpticOdds. Central Offer gives us control, future provider flexibility, and market management.</div>
+        <div class="team-wps">WP 2, 6, 11, 16</div>
       </div>
     </div>
-    <div class="card">
-      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-        <span>Central Offer (SBK-3006)</span>
-        <span style="font-weight:800; color:var(--accent-blue);">59%</span>
+    <div class="team-row">
+      <div class="team-badge team-frontend">FRONTEND</div>
+      <div>
+        <div class="team-desc">WC Hub landing page, structured navigation, real-time odds movement indicators, suspended market states.</div>
+        <div class="team-wps">WP 2, 6, 11, 16</div>
       </div>
-      <div style="height:10px; background:var(--bg-dark); border-radius:5px; overflow:hidden;">
-        <div style="width:59%; background:var(--accent-blue); height:100%;"></div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-betting">BETTING</div>
+      <div>
+        <div class="team-desc">SGP prices refresh when odds change. Betting stops accepting bets when feed is down.</div>
+        <div class="team-wps">WP 11, 16</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-data">DATA</div>
+      <div>
+        <div class="team-desc">Odds line history for traders in Splunk. Data pipeline feeds Diffusion for real-time frontend. Feed health monitoring.</div>
+        <div class="team-wps">WP 2, 6, 11, 16</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-splunk">SPLUNK</div>
+      <div>
+        <div class="team-desc"><strong>RAW REPORT:</strong> Offer events, odds history, feed health dashboard — first line of defense for traders.</div>
+        <div class="team-wps">WP 2, 6, 16</div>
       </div>
     </div>
   </div>
-</div>\n<div class="slide">
-  <h2>Strategic Next Steps</h2>
+
+  <div class="slide-number">5 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 6: DELIVERABLE 2 -->
+<div class="slide">
+  <h2 style="color:var(--accent-green);">Deliverable 2: Betslip Core & Placement Flow</h2>
+  <div class="demo-quote">Demo: v1.55 — Punter places a straight bet with full validation. v1.6 — adds parlay, SGP, Mega Parlay. Operator controls limits and kill switch.</div>
+
+  <div style="display:flex; flex-direction:column; gap:10px;">
+    <div class="team-row">
+      <div class="team-badge team-frontend">FRONTEND</div>
+      <div>
+        <div class="team-desc">Punter sees combined odds, potential winnings, clear errors. Kill switch makes site go dark instantly. SGP eligibility feedback.</div>
+        <div class="team-wps">WP 1, 4, 5, 14, 15</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-betting">BETTING</div>
+      <div>
+        <div class="team-desc">Core upgrade from prototype — parlay + SGP + Mega Parlay. Limit enforcement. Kill switch. Real wallet + auth integration.</div>
+        <div class="team-wps">WP 1, 4, 5, 7, 8, 13, 14, 15, 16</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-offer">OFFER</div>
+      <div>
+        <div class="team-desc">Business defines the rules — limits, allowed bet types, SGP/Mega Parlay configurations, master switch.</div>
+        <div class="team-wps">WP 4, 5, 14, 15</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-data">DATA</div>
+      <div>
+        <div class="team-desc">Every bet attempt flows into reporting. Bet Ticker and Liability dashboards start working. Rejected bets analysis.</div>
+        <div class="team-wps">WP 1, 4, 5, 7, 8, 13, 14, 15, 16</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-splunk">SPLUNK</div>
+      <div>
+        <div class="team-desc"><strong>RAW REPORT:</strong> First multi-leg bet events in the system. Feed health operational monitoring.</div>
+        <div class="team-wps">WP 1, 16</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">6 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 7: DELIVERABLE 3 -->
+<div class="slide">
+  <h2 style="color:var(--accent-purple);">Deliverable 3: My Bets & Real Data Connection</h2>
+  <div class="demo-quote">Demo: Punter sees bet history updating live. Bets settle from real results. Traders correct errors. Real money moves.</div>
+
+  <div style="display:flex; flex-direction:column; gap:10px;">
+    <div class="team-row">
+      <div class="team-badge team-frontend">FRONTEND</div>
+      <div>
+        <div class="team-desc">Punter sees "Pending to Won/Lost" on their bets. My Bets screen — core punter experience for transparency and trust.</div>
+        <div class="team-wps">WP 3, 12</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-betting">BETTING</div>
+      <div>
+        <div class="team-desc">Where the business makes or loses money. Real grading, real wallet credits/debits, resettlement, manual corrections, bet history.</div>
+        <div class="team-wps">WP 3, 7, 8, 9, 12, 13, 14, 15</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-feeds">FEEDS</div>
+      <div>
+        <div class="team-desc">Match results flow from OpticOdds — without results, no bets settle.</div>
+        <div class="team-wps">WP 3</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-offer">OFFER</div>
+      <div>
+        <div class="team-desc">Results flow through our offer resolution — we own the grading, not the feed provider.</div>
+        <div class="team-wps">WP 3</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-data">DATA</div>
+      <div>
+        <div class="team-desc">Settlement data feeds P&L reports. Liability updates as results arrive. Manual settlement audit. Live push for My Bets.</div>
+        <div class="team-wps">WP 3, 7, 8, 9, 12, 13</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-splunk">SPLUNK</div>
+      <div>
+        <div class="team-desc"><strong>RAW REPORT:</strong> Every grading decision, every wallet transaction, every resettlement — the financial audit trail.</div>
+        <div class="team-wps">WP 3, 12</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">7 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 8: DELIVERABLE 4 -->
+<div class="slide">
+  <h2 style="color:var(--accent-amber);">Deliverable 4: Operation Control & Visibility</h2>
+  <div class="demo-quote">Demo: Operator manages the book from Kraken. Splunk dashboards: feed health, bet ticker, liability, audit trail, bet history.</div>
+
+  <div style="display:flex; flex-direction:column; gap:10px;">
+    <div class="team-row">
+      <div class="team-badge team-bo">BACKOFFICE</div>
+      <div>
+        <div class="team-desc">Kraken tools — kill switch, limit config, manual settlement with justification, full audit trail. The operator's control panel.</div>
+        <div class="team-wps">WP 4, 5, 9, 10</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-betting">BETTING</div>
+      <div>
+        <div class="team-desc">Kill switch blocks the API (not just UI). Limits enforced at placement. Manual settlement engine. Audit for every action.</div>
+        <div class="team-wps">WP 4, 5, 7, 9, 10, 13</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-offer">OFFER</div>
+      <div>
+        <div class="team-desc">Operator Management holds the master switch and limit configuration — the source of truth for what's allowed.</div>
+        <div class="team-wps">WP 4, 5</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-data">DATA</div>
+      <div>
+        <div class="team-desc">All operational dashboards — Bet Ticker, Liability, Audit Trail, Odds History, Feed Health, Rejected Bets analysis.</div>
+        <div class="team-wps">WP 4, 5, 7, 8, 9, 10, 11, 13, 16</div>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-badge team-splunk">SPLUNK</div>
+      <div>
+        <div class="team-desc"><strong>BUSINESS REPORT:</strong> The trader's operational cockpit — every dashboard they need to run the book on game day.</div>
+        <div class="team-wps">WP 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">8 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 9: TEAM WORKLOAD -->
+<div class="slide">
+  <h2>Domain Team Workload</h2>
+  <p class="subtitle">WP assignments per team across all 4 deliverables. Betting and Data carry the heaviest load.</p>
+
   <div class="grid-2">
-    <div class="card" style="border-top:3px solid var(--accent-amber);">
-      <h3>May 15 Readiness</h3>
-      <p style="font-size:14px; color:var(--text-secondary);">Finalize Market Parser and Central Offer deployment to Hidden Prod.</p>
-      <div class="slide-number">10 / 10</div>
-  <div class="footer-brand">WKS FT Sportsbook Unit</div>
-</div>
-    <div class="card" style="border-top:3px solid var(--accent-red);">
-      <h3>Risk Mitigation</h3>
-      <p style="font-size:14px; color:var(--text-secondary);">Unblock SGP and Mega Parlay scope validation to prevent Phase 2 delays.</p>
+    <div>
+      <div class="bar-chart" style="height:200px; align-items:end;">
+        <div class="bar-item">
+          <div class="bar-value" style="color:var(--accent-amber);">7</div>
+          <div class="bar" style="height:50px; background:var(--accent-amber);"></div>
+          <div class="bar-label">Feeds</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-value" style="color:var(--accent-purple);">11</div>
+          <div class="bar" style="height:79px; background:var(--accent-purple);"></div>
+          <div class="bar-label">Offer</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-value" style="color:var(--accent-cyan);">11</div>
+          <div class="bar" style="height:79px; background:var(--accent-cyan);"></div>
+          <div class="bar-label">Frontend</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-value" style="color:var(--accent-red);">25</div>
+          <div class="bar" style="height:179px; background:var(--accent-red);"></div>
+          <div class="bar-label">Betting</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-value" style="color:var(--accent-green);">28</div>
+          <div class="bar" style="height:200px; background:var(--accent-green);"></div>
+          <div class="bar-label">Data</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-value" style="color:var(--accent-amber);">4</div>
+          <div class="bar" style="height:29px; background:var(--accent-amber);"></div>
+          <div class="bar-label">BackOffice</div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-value" style="color:var(--accent-blue);">19</div>
+          <div class="bar" style="height:136px; background:var(--accent-blue);"></div>
+          <div class="bar-label">Splunk</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <table>
+        <tr><th>Domain</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th><th>Total</th></tr>
+        <tr><td>Feeds</td><td>4</td><td>1</td><td>1</td><td>1</td><td><strong>7</strong></td></tr>
+        <tr><td>Offer</td><td>4</td><td>4</td><td>1</td><td>2</td><td><strong>11</strong></td></tr>
+        <tr><td>Frontend</td><td>4</td><td>5</td><td>2</td><td>—</td><td><strong>11</strong></td></tr>
+        <tr><td style="color:var(--accent-red);">Betting</td><td>2</td><td>9</td><td>8</td><td>6</td><td><strong style="color:var(--accent-red);">25</strong></td></tr>
+        <tr><td style="color:var(--accent-green);">Data</td><td>4</td><td>9</td><td>6</td><td>9</td><td><strong style="color:var(--accent-green);">28</strong></td></tr>
+        <tr><td>BackOffice</td><td>—</td><td>—</td><td>—</td><td>4</td><td><strong>4</strong></td></tr>
+        <tr><td>Splunk</td><td>3</td><td>2</td><td>2</td><td>12</td><td><strong>19</strong></td></tr>
+      </table>
     </div>
   </div>
-</div>\n</body>
+
+  <div class="slide-number">9 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 10: DEPENDENCIES & RISKS -->
+<div class="slide">
+  <h2>Dependencies & Risks</h2>
+
+  <div class="grid-2">
+    <div>
+      <h3>Critical Path</h3>
+      <div class="dep-arrow"><span class="from">WP 6 Central Offer</span> <span class="arrow">&rarr;</span> <span class="to">WP 2, 11, and all downstream</span> <span class="blocks">Foundation</span></div>
+      <div class="dep-arrow"><span class="from">WES Wallet</span> <span class="arrow">&rarr;</span> <span class="to">WP 1, 3, 5, 9</span> <span class="blocks">Blocks 4 WPs</span></div>
+      <div class="dep-arrow"><span class="from">PAM Auth</span> <span class="arrow">&rarr;</span> <span class="to">WP 1, 5</span> <span class="blocks">Blocks 2 WPs</span></div>
+      <div class="dep-arrow"><span class="from">WP 1 Simple Parlay</span> <span class="arrow">&rarr;</span> <span class="to">WP 14 SGP &rarr; WP 15 Mega</span> <span class="blocks">Sequential</span></div>
+    </div>
+
+    <div>
+      <h3>Top Risks</h3>
+      <div class="risk-row">
+        <div class="risk-severity severity-high">HIGH</div>
+        <div style="font-size:13px;">
+          <strong style="color:var(--text-primary);">Mega Parlay & SGP still in Scope Validation</strong>
+          <div style="color:var(--text-muted); font-size:12px;">Most complex bet types. Cannot estimate or plan until scope is locked.</div>
+        </div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-severity severity-high">HIGH</div>
+        <div style="font-size:13px;">
+          <strong style="color:var(--text-primary);">Shared DB schema refactor (SBK-2008)</strong>
+          <div style="color:var(--text-muted); font-size:12px;">Tech debt blocking both Simple Parlay and Settlement.</div>
+        </div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-severity severity-high">HIGH</div>
+        <div style="font-size:13px;">
+          <strong style="color:var(--text-primary);">WES Wallet integration timeline</strong>
+          <div style="color:var(--text-muted); font-size:12px;">Any delay cascades across 4 work packages. Real money can't move without it.</div>
+        </div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-severity severity-med">MED</div>
+        <div style="font-size:13px;">
+          <strong style="color:var(--text-primary);">Splunk vs New Relic strategy undefined</strong>
+          <div style="color:var(--text-muted); font-size:12px;">Affects all reporting and audit WPs. Decision needed.</div>
+        </div>
+      </div>
+      <div class="risk-row" style="border:none;">
+        <div class="risk-severity severity-med">MED</div>
+        <div style="font-size:13px;">
+          <strong style="color:var(--text-primary);">Feed Health &rarr; Betting suspension unscoped</strong>
+          <div style="color:var(--text-muted); font-size:12px;">When feed is unhealthy, who suspends betting? No WP owns this end-to-end.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">10 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 11: SCOPE -->
+<div class="slide">
+  <h2>Scope: v1.55 → v1.6 → Future</h2>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:20px;">
+    <!-- v1.55 -->
+    <div>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="tag tag-green" style="font-size:11px;">v1.55 — Straight Bets</span>
+        <span style="font-size:10px; color:var(--accent-green); font-weight:600;">NOW</span>
+      </div>
+      <div class="scope-list" style="columns:1;">
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> <strong>Straight Bets only</strong> (single selection)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Pre-match betting on World Cup fixtures</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Real settlement from OpticOdds results</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Operator controls (kill switch, limits, manual settle)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Bet Ticker, Liability, Audit Trail in Splunk</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> Web desktop + mobile responsive</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> 4 brands, USD, en-US</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-green);">&#10003;</span> 5,000 bets/min | 500ms latency | 99.9% uptime</div>
+      </div>
+      <div style="margin-top:12px; padding:8px 12px; background:rgba(248,113,113,0.06); border:1px solid rgba(248,113,113,0.15); border-radius:6px;">
+        <div style="font-size:10px; font-weight:600; color:var(--accent-red); margin-bottom:4px;">Reduced for v1.55</div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-red);">!</span> <span style="font-size:11px;">Traders Hub UI — API only</span></div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-red);">!</span> <span style="font-size:11px;">Limits config — absorbed into Betting</span></div>
+      </div>
+    </div>
+
+    <!-- v1.6 -->
+    <div>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="tag tag-blue" style="font-size:11px;">v1.6 — Full Bet Types</span>
+        <span style="font-size:10px; color:var(--accent-blue); font-weight:600;">NEXT</span>
+      </div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-bottom:10px;">Everything in v1.55, plus:</div>
+      <div class="scope-list" style="columns:1;">
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> <strong>Simple Parlay</strong> (multi-fixture, 2-12 legs)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> <strong>SGP</strong> (same-game parlay, correlated pricing)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> <strong>Mega Parlay</strong> (SGPs + straights combined)</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> Settlement for all bet types</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--accent-blue);">+</span> Advanced limit validations per bet type</div>
+      </div>
+      <div style="margin-top:12px; padding:8px 12px; background:rgba(251,191,36,0.06); border:1px solid rgba(251,191,36,0.15); border-radius:6px;">
+        <div style="font-size:10px; font-weight:600; color:var(--accent-amber); margin-bottom:4px;">Should Have (v1.6)</div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-amber);">~</span> <span style="font-size:11px;">In-Play betting</span></div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-amber);">~</span> <span style="font-size:11px;">Futures betting (straights only)</span></div>
+        <div class="scope-item" style="padding:2px 0;"><span class="scope-icon" style="color:var(--accent-amber);">~</span> <span style="font-size:11px;">Fractional odds format</span></div>
+      </div>
+    </div>
+
+    <!-- Future -->
+    <div>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="tag" style="font-size:11px; background:rgba(100,116,139,0.15); color:#94a3b8;">v1.7+ / v2.0+</span>
+        <span style="font-size:10px; color:var(--text-muted); font-weight:600;">LATER</span>
+      </div>
+      <div class="scope-list" style="columns:1;">
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Multi-currency</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Multi-language</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Cash Out</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Native mobile apps</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Custom markets</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Dynamic margin management</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Per-punter value factors</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Automated dispute dashboard</div>
+        <div class="scope-item"><span class="scope-icon" style="color:var(--text-muted);">&#10007;</span> Other sports</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">11 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 12: PLANNING ZOOM LEVELS -->
+<div class="slide">
+  <h2>Planning Framework — 4 Zoom Levels</h2>
+  <p class="subtitle">Each zoom level increases planning precision. Each level has a gate — work at that level only starts after the gate is passed.</p>
+
+  <div style="display:flex; flex-direction:column; gap:0;">
+
+    <!-- ZOOM 01 -->
+    <div style="display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--border);">
+      <div style="min-width:200px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+          <div class="zoom-num zoom-active">01</div>
+          <div>
+            <div style="font-weight:700; font-size:16px; color:var(--text-primary);">Business Value Mapping</div>
+            <div style="font-size:11px; color:var(--accent-green); font-weight:600;">DONE</div>
+          </div>
+        </div>
+        <div style="font-size:11px; color:var(--text-muted); padding-left:52px;">Gate: <strong style="color:var(--text-secondary);">Product + WPs defined</strong></div>
+      </div>
+      <div style="flex:1;">
+        <div class="card" style="background:rgba(52,211,153,0.05); border:1px solid rgba(52,211,153,0.2);">
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">What to Demo</strong> — Map each deliverable to demoable business value
+          </div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">What work per Domain</strong> — Assign WPs to domain teams with business WHY
+          </div>
+          <div style="font-size:11px; color:var(--accent-green);">Output: 4 Deliverables, 16 WPs mapped across 8 domains, business justification per assignment</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZOOM 02 -->
+    <div style="display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--border);">
+      <div style="min-width:200px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+          <div class="zoom-num" style="background:var(--accent-blue); color:white;">02</div>
+          <div>
+            <div style="font-weight:700; font-size:16px; color:var(--text-primary);">Order & Estimates</div>
+            <div style="font-size:11px; color:var(--accent-blue); font-weight:600;">NEXT</div>
+          </div>
+        </div>
+        <div style="font-size:11px; color:var(--text-muted); padding-left:52px;">Gate: <strong style="color:var(--text-secondary);">After Architecture Handover</strong></div>
+      </div>
+      <div style="flex:1;">
+        <div class="card" style="background:rgba(79,140,255,0.05); border:1px solid rgba(79,140,255,0.2);">
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">What order per Domain</strong> — Sequence WPs within each domain based on dependencies and value
+          </div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">Super High Level Estimate</strong> — T-shirt sizing at weeks level (S/M/L/XL) per WP per domain
+          </div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">Dependencies</strong> — Cross-domain and external dependency map (WES, PAM, OpticOdds)
+          </div>
+          <div style="font-size:11px; color:var(--accent-blue);">Output: Delivery order filled in sheet, T-shirt estimates, dependency graph per deliverable</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZOOM 03 -->
+    <div style="display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--border);">
+      <div style="min-width:200px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+          <div class="zoom-num zoom-pending">03</div>
+          <div>
+            <div style="font-weight:700; font-size:16px; color:var(--text-primary);">Milestones & Dates</div>
+            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">PENDING</div>
+          </div>
+        </div>
+        <div style="font-size:11px; color:var(--text-muted); padding-left:52px;">Gate: <strong style="color:var(--text-secondary);">After Software Design</strong></div>
+      </div>
+      <div style="flex:1;">
+        <div class="card">
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">Milestones / Demo Dates</strong> — Concrete dates for each deliverable demo
+          </div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">Estimation Per Big Feature</strong> — Man-day estimates based on software design output
+          </div>
+          <div style="font-size:11px; color:var(--text-muted);">Output: Programme timeline with demo milestones, resource allocation per feature</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZOOM 04 -->
+    <div style="display:flex; gap:20px; padding:20px 0;">
+      <div style="min-width:200px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+          <div class="zoom-num zoom-pending">04</div>
+          <div>
+            <div style="font-weight:700; font-size:16px; color:var(--text-primary);">Sprint-Level Plan</div>
+            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">PENDING</div>
+          </div>
+        </div>
+        <div style="font-size:11px; color:var(--text-muted); padding-left:52px;">Gate: <strong style="color:var(--text-secondary);">After Team Refinement</strong></div>
+      </div>
+      <div style="flex:1;">
+        <div class="card">
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">Story Points in a Sprint per Tasks</strong> — Detailed JIRA plan with story-level breakdown
+          </div>
+          <div style="font-size:13px; color:var(--text-secondary); margin-bottom:8px;">
+            <strong style="color:var(--text-primary);">Sprint assignments</strong> — Who does what in which sprint, velocity-based forecasting
+          </div>
+          <div style="font-size:11px; color:var(--text-muted);">Output: Full JIRA board with sprints, stories, assignments, burndown targets</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="slide-number">12 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 13: SDLC FUNNEL -->
+<div class="slide">
+  <h2>SDLC Funnel — How Work Packages Progress</h2>
+  <p class="subtitle">Each WP passes through a funnel of stages. Software Design is the unlock point — after that, work scales into teams for estimates and sprint planning.</p>
+
+  <!-- FUNNEL VISUAL -->
+  <div style="position:relative; margin:24px 0 20px;">
+    <!-- Funnel stages as connected blocks -->
+    <div style="display:flex; align-items:center; gap:0;">
+      <!-- Product -->
+      <div style="flex:1; text-align:center;">
+        <div style="background:linear-gradient(135deg, rgba(167,139,250,0.2), rgba(167,139,250,0.1)); border:1px solid rgba(167,139,250,0.3); border-radius:8px; padding:12px 8px; position:relative;">
+          <div style="font-size:13px; font-weight:700; color:var(--accent-purple);">Product</div>
+          <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Scope & WP Definition</div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">Owner: <strong style="color:var(--text-secondary);">Kurt / Stakeholders</strong></div>
+      </div>
+      <div style="color:var(--text-muted); font-size:18px; padding:0 4px;">&#9654;</div>
+      <!-- Architecture -->
+      <div style="flex:1; text-align:center;">
+        <div style="background:linear-gradient(135deg, rgba(79,140,255,0.2), rgba(79,140,255,0.1)); border:1px solid rgba(79,140,255,0.3); border-radius:8px; padding:12px 8px;">
+          <div style="font-size:13px; font-weight:700; color:var(--accent-blue);">Architecture</div>
+          <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Coverage & Handover</div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">Owner: <strong style="color:var(--text-secondary);">Matus / Solutions</strong></div>
+      </div>
+      <div style="color:var(--text-muted); font-size:18px; padding:0 4px;">&#9654;</div>
+      <!-- Software Design -->
+      <div style="flex:1.2; text-align:center;">
+        <div style="background:linear-gradient(135deg, rgba(251,191,36,0.25), rgba(251,191,36,0.1)); border:2px solid rgba(251,191,36,0.5); border-radius:8px; padding:12px 8px; box-shadow:0 0 16px rgba(251,191,36,0.1);">
+          <div style="font-size:13px; font-weight:700; color:var(--accent-amber);">Software Design</div>
+          <div style="font-size:10px; color:var(--accent-amber); margin-top:2px; font-weight:600;">UNLOCK POINT</div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">Owner: <strong style="color:var(--text-secondary);">Team Principal</strong></div>
+      </div>
+      <div style="color:var(--accent-amber); font-size:18px; padding:0 4px; font-weight:bold;">&#9654;</div>
+      <!-- Team Refine -->
+      <div style="flex:1; text-align:center;">
+        <div style="background:linear-gradient(135deg, rgba(34,211,238,0.2), rgba(34,211,238,0.1)); border:1px solid rgba(34,211,238,0.3); border-radius:8px; padding:12px 8px;">
+          <div style="font-size:13px; font-weight:700; color:var(--accent-cyan);">Team Refine</div>
+          <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Estimates & Planning</div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">Owner: <strong style="color:var(--text-secondary);">Team Refine</strong></div>
+      </div>
+      <div style="color:var(--text-muted); font-size:18px; padding:0 4px;">&#9654;</div>
+      <!-- Team Execution — 3 environments -->
+      <div style="flex:1.6; text-align:center;">
+        <div style="background:linear-gradient(135deg, rgba(52,211,153,0.2), rgba(52,211,153,0.1)); border:1px solid rgba(52,211,153,0.3); border-radius:8px; padding:10px 6px;">
+          <div style="font-size:13px; font-weight:700; color:var(--accent-green);">Team Execution</div>
+          <div style="display:flex; gap:4px; margin-top:6px; justify-content:center;">
+            <div style="padding:3px 8px; background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.2); border-radius:4px; font-size:9px; color:var(--accent-green); font-weight:600;">AWS Stage</div>
+            <span style="color:var(--text-muted); font-size:10px; align-self:center;">&#9654;</span>
+            <div style="padding:3px 8px; background:rgba(79,140,255,0.1); border:1px solid rgba(79,140,255,0.2); border-radius:4px; font-size:9px; color:var(--accent-blue); font-weight:600;">PPD</div>
+            <span style="color:var(--text-muted); font-size:10px; align-self:center;">&#9654;</span>
+            <div style="padding:3px 8px; background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.2); border-radius:4px; font-size:9px; color:var(--accent-amber); font-weight:600;">Production</div>
+          </div>
+        </div>
+        <div style="font-size:10px; color:var(--text-muted); margin-top:6px;">Owner: <strong style="color:var(--text-secondary);">Team Execution</strong></div>
+      </div>
+    </div>
+
+    <!-- DoR / DoD row -->
+    <div style="display:flex; gap:0; margin-top:12px;">
+      <div style="flex:1; text-align:center;"><span class="tag tag-blue" style="font-size:9px;">DoR</span></div>
+      <div style="width:22px;"></div>
+      <div style="flex:1; text-align:center;"><span class="tag tag-blue" style="font-size:9px;">DoR</span> <span class="tag tag-purple" style="font-size:9px;">DoD</span></div>
+      <div style="width:22px;"></div>
+      <div style="flex:1.2; text-align:center;"><span class="tag tag-blue" style="font-size:9px;">DoR</span> <span class="tag tag-purple" style="font-size:9px;">DoD</span></div>
+      <div style="width:22px;"></div>
+      <div style="flex:1; text-align:center;"><span class="tag tag-blue" style="font-size:9px;">DoR</span> <span class="tag tag-purple" style="font-size:9px;">DoD</span></div>
+      <div style="width:22px;"></div>
+      <div style="flex:1; text-align:center;"><span class="tag tag-purple" style="font-size:9px;">DoD</span></div>
+    </div>
+  </div>
+
+  <!-- After Software Design: what scales out -->
+  <div style="margin-top:16px;">
+    <h3 style="color:var(--accent-amber);">After Software Design — Work Fans Out Into Parallel Streams</h3>
+    <div style="display:flex; gap:8px; margin-top:12px;">
+      <div class="card" style="flex:1; border-top:3px solid var(--accent-red); padding:14px; text-align:center;">
+        <div style="font-size:13px; font-weight:700; color:var(--accent-red);">Dev Estimates</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Sprint &rarr; Demo</div>
+      </div>
+      <div class="card" style="flex:1; border-top:3px solid var(--accent-cyan); padding:14px; text-align:center;">
+        <div style="font-size:13px; font-weight:700; color:var(--accent-cyan);">QA Estimates</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Sprint &rarr; Demo</div>
+      </div>
+      <div class="card" style="flex:1; border-top:3px solid var(--accent-green); padding:14px; text-align:center;">
+        <div style="font-size:13px; font-weight:700; color:var(--accent-green);">DevOps Plan</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Sprint &rarr; Demo</div>
+      </div>
+      <div class="card" style="flex:1; border-top:3px solid var(--accent-blue); padding:14px; text-align:center;">
+        <div style="font-size:13px; font-weight:700; color:var(--accent-blue);">Data Plan</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Sprint &rarr; Demo</div>
+      </div>
+      <div class="card" style="flex:1; border-top:3px solid var(--accent-purple); padding:14px; text-align:center;">
+        <div style="font-size:13px; font-weight:700; color:var(--accent-purple);">FE Plan</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">Before SD (Mocks)</div>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center; gap:24px; margin-top:12px;">
+      <div style="text-align:center; padding:10px 24px; background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.2); border-radius:8px;">
+        <div style="font-size:12px; font-weight:700; color:var(--accent-green);">Sprint Review 1</div>
+        <div style="font-size:10px; color:var(--text-muted);">Iteration 1 Complete</div>
+      </div>
+      <div style="color:var(--text-muted); font-size:18px; align-self:center;">&#9654;</div>
+      <div style="text-align:center; padding:10px 24px; background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.2); border-radius:8px;">
+        <div style="font-size:12px; font-weight:700; color:var(--accent-green);">Sprint Review 2</div>
+        <div style="font-size:10px; color:var(--text-muted);">Iteration 2 Complete</div>
+      </div>
+      <div style="color:var(--text-muted); font-size:18px; align-self:center;">&#9654;</div>
+      <div style="text-align:center; padding:10px 24px; background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.3); border-radius:8px;">
+        <div style="font-size:12px; font-weight:700; color:var(--accent-amber);">Deliverable Demo</div>
+        <div style="font-size:10px; color:var(--text-muted);">Business Value Shown</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">13 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 14: WP TRACKING THROUGH FUNNEL -->
+<div class="slide">
+  <h2>WP Progress Through the Funnel</h2>
+  <p class="subtitle">Weekly tracking view — where each Work Package sits in the SDLC pipeline. Software Design completion is the key unblocking event.</p>
+
+  <table style="font-size:11px;">
+    <tr>
+      <th style="min-width:40px;">#</th>
+      <th style="min-width:160px;">Work Package</th>
+      <th style="text-align:center; background:rgba(167,139,250,0.08); min-width:90px;">Product</th>
+      <th style="text-align:center; background:rgba(79,140,255,0.08); min-width:90px;">Architecture</th>
+      <th style="text-align:center; background:rgba(251,191,36,0.08); min-width:90px; border-left:2px solid var(--accent-amber); border-right:2px solid var(--accent-amber);">Software Design</th>
+      <th style="text-align:center; background:rgba(34,211,238,0.08); min-width:90px;">Team Refine</th>
+      <th style="text-align:center; background:rgba(52,211,153,0.04); min-width:70px; border-left:2px solid rgba(52,211,153,0.3);">AWS Stage</th>
+      <th style="text-align:center; background:rgba(52,211,153,0.06); min-width:70px;">PPD</th>
+      <th style="text-align:center; background:rgba(52,211,153,0.08); min-width:70px; border-right:2px solid rgba(52,211,153,0.3);">Production</th>
+      <th style="text-align:center; min-width:90px;">ETA / Iteration</th>
+    </tr>
+    <!-- SA-15 Straight Bet — DONE -->
+    <tr>
+      <td>—</td>
+      <td>Straight Bet</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(52,211,153,0.15);"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-right:2px solid rgba(52,211,153,0.15);"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; font-size:10px; color:var(--accent-green);">Delivered</td>
+    </tr>
+    <!-- SA-66 Central Offer -->
+    <tr>
+      <td>6</td>
+      <td>Central Offer Foundation</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <!-- SA-14 WC Hub -->
+    <tr>
+      <td>2</td>
+      <td>Soccer World Cup Hub</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <!-- SA-17 Simple Parlay -->
+    <tr>
+      <td>1</td>
+      <td>Simple Parlay</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">Iteration 1</td>
+    </tr>
+    <!-- SA-22 Settlement -->
+    <tr>
+      <td>3</td>
+      <td>Settlement from Optic Odds</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <!-- SA-20 Bet Placement Controls -->
+    <tr>
+      <td>5</td>
+      <td>Bet Placement Controls</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <!-- Data/Reporting WPs — grouped -->
+    <tr>
+      <td>7,8</td>
+      <td>Bet Ticker + RT Liability</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <tr>
+      <td>12,13</td>
+      <td>My Bets + Bet History</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Feed Provider Health</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15);"><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <!-- Ready for Handover WPs -->
+    <tr style="background:rgba(79,140,255,0.03);">
+      <td>11</td>
+      <td>RT Odds & Market Display</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <tr style="background:rgba(79,140,255,0.03);">
+      <td>4</td>
+      <td>Book & Player On/Off Switch</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <tr style="background:rgba(79,140,255,0.03);">
+      <td>9</td>
+      <td>Manual Resettlement & Void</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <tr style="background:rgba(79,140,255,0.03);">
+      <td>10</td>
+      <td>Audit Trail</td>
+      <td style="text-align:center;"><span style="color:var(--accent-green);">&#10003;</span></td>
+      <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:10px;">Ready</span></td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--text-muted);">TBD</td>
+    </tr>
+    <!-- Scope Validation WPs -->
+    <tr style="background:rgba(251,191,36,0.03);">
+      <td>14</td>
+      <td>SGP</td>
+      <td style="text-align:center;"><span class="status-pill status-scope" style="font-size:10px;">Scope</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--accent-red);">Blocked</td>
+    </tr>
+    <tr style="background:rgba(251,191,36,0.03);">
+      <td>15</td>
+      <td>Mega Parlay</td>
+      <td style="text-align:center;"><span class="status-pill status-scope" style="font-size:10px;">Scope</span></td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; border-left:2px solid rgba(251,191,36,0.15); border-right:2px solid rgba(251,191,36,0.15); color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-left:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; color:var(--text-muted);">—</td>
+      <td style="text-align:center; color:var(--text-muted); border-right:2px solid rgba(52,211,153,0.15);">—</td>
+      <td style="text-align:center; font-size:10px; color:var(--accent-red);">Blocked</td>
+    </tr>
+  </table>
+
+  <div style="display:flex; gap:16px; margin-top:16px; padding:12px 16px; background:var(--bg-card); border-radius:8px; border-left:3px solid var(--accent-amber);">
+    <div style="font-size:12px; color:var(--text-secondary);">
+      <strong style="color:var(--accent-amber);">Key insight:</strong> 9 WPs are currently in Software Design. Once each completes SD, it unlocks parallel estimation across Dev, QA, DevOps, Data, and FE streams — each producing sprint plans and demo targets. The SD column is the bottleneck we track weekly.
+    </div>
+  </div>
+
+  <div class="slide-number">14 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 15: WP x TEAM MATRIX -->
+<div class="slide">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+    <h2 style="margin:0;">Work Package x Team Matrix</h2>
+    <span class="tag tag-blue">SBK-669 &bull; High-Level View</span>
+  </div>
+  <p class="subtitle" style="margin-bottom:12px;">Which teams have epics per WP, with Jira key and status. Dashes = no epic exists yet for that team.</p>
+
+  <div style="overflow-x:auto;">
+    <table style="font-size:10px; white-space:nowrap;">
+      <tr>
+        <th style="min-width:30px;">#</th>
+        <th style="min-width:120px;">Work Package</th>
+        <th style="text-align:center; background:rgba(167,139,250,0.06);">Architects</th>
+        <th style="text-align:center; background:rgba(248,113,113,0.06);">Betting Eng</th>
+        <th style="text-align:center; background:rgba(167,139,250,0.06);">Offer Mgmt</th>
+        <th style="text-align:center; background:rgba(251,191,36,0.06);">Feeds Mgmt</th>
+        <th style="text-align:center; background:rgba(251,191,36,0.06);">Feeds Integ</th>
+        <th style="text-align:center; background:rgba(52,211,153,0.06);">Data</th>
+        <th style="text-align:center; background:rgba(34,211,238,0.06);">Frontend</th>
+        <th style="text-align:center; background:rgba(79,140,255,0.06);">BE QAs</th>
+        <th style="text-align:center; background:rgba(100,116,139,0.06);">Unassigned</th>
+      </tr>
+      <tr><td>—</td><td>Straight Bet</td>
+        <td style="text-align:center;"><span class="status-pill status-done" style="font-size:9px;">Done</span><br><span style="font-size:8px; color:var(--text-muted);">SA-15</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">Active</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-1951</span></td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-3790</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td></tr>
+      <tr><td>6</td><td>Central Offer</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-66</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill status-scope" style="font-size:9px;">Scoping</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-3006</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td></tr>
+      <tr><td>2</td><td>Soccer WC Hub</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-14</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">Active</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-1897</span><br><span class="status-pill status-scope" style="font-size:9px;">Scoping</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-3516</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2189</span></td></tr>
+      <tr><td>1</td><td>Simple Parlay</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-17</span></td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">Active</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2199</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td></tr>
+      <tr><td>3</td><td>Settlement</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-22</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2200</span></td></tr>
+      <tr><td>4</td><td>Book On/Off</td>
+        <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:9px;">Ready</span><br><span style="font-size:8px; color:var(--text-muted);">SA-21</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2201</span></td></tr>
+      <tr><td>5</td><td>Bet Controls</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-20</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2202</span></td></tr>
+      <tr><td>7</td><td>Bet Ticker</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-25</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">Active</span><br><span style="font-size:8px; color:var(--text-muted);">DATA-22</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2217</span></td></tr>
+      <tr><td>8</td><td>RT Liability</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-24</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2216</span></td></tr>
+      <tr><td>9</td><td>Manual Resettlement</td>
+        <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:9px;">Ready</span><br><span style="font-size:8px; color:var(--text-muted);">SA-23</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2215</span></td></tr>
+      <tr><td>10</td><td>Audit Trail</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-28</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2220</span></td></tr>
+      <tr><td>11</td><td>RT Odds Display</td>
+        <td style="text-align:center;"><span class="status-pill status-handover" style="font-size:9px;">Ready</span><br><span style="font-size:8px; color:var(--text-muted);">SA-19</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2214</span></td></tr>
+      <tr><td>12</td><td>My Bets</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-27</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2219</span></td></tr>
+      <tr><td>13</td><td>Bet History</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-26</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill" style="font-size:9px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-2218</span></td></tr>
+      <tr style="background:rgba(251,191,36,0.03);"><td>14</td><td>SGP</td>
+        <td style="text-align:center;"><span class="status-pill status-scope" style="font-size:9px;">Scope</span><br><span style="font-size:8px; color:var(--text-muted);">SA-16</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td></tr>
+      <tr style="background:rgba(251,191,36,0.03);"><td>15</td><td>Mega Parlay</td>
+        <td style="text-align:center;"><span class="status-pill status-scope" style="font-size:9px;">Scope</span><br><span style="font-size:8px; color:var(--text-muted);">SA-18</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td></tr>
+      <tr><td>16</td><td>Feed Health</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">In Del</span><br><span style="font-size:8px; color:var(--text-muted);">SA-71</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td>
+        <td style="text-align:center;"><span class="status-pill status-delivery" style="font-size:9px;">Active</span><br><span style="font-size:8px; color:var(--text-muted);">SBK-3094</span></td>
+        <td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td><td style="text-align:center; color:var(--text-muted);">—</td></tr>
+    </table>
+  </div>
+
+  <div style="display:flex; gap:12px; margin-top:10px;">
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-green); padding:10px; text-align:center;">
+      <div style="font-size:20px; font-weight:800; color:var(--accent-green);">6</div>
+      <div style="font-size:9px; color:var(--text-muted); text-transform:uppercase;">Team Epics Active</div>
+    </div>
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-amber); padding:10px; text-align:center;">
+      <div style="font-size:20px; font-weight:800; color:var(--accent-amber);">11</div>
+      <div style="font-size:9px; color:var(--text-muted); text-transform:uppercase;">Placeholder "Delivery"</div>
+    </div>
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-red); padding:10px; text-align:center;">
+      <div style="font-size:20px; font-weight:800; color:var(--accent-red);">~40+</div>
+      <div style="font-size:9px; color:var(--text-muted); text-transform:uppercase;">Missing Team Epics</div>
+    </div>
+    <div class="card" style="flex:2; border-left:3px solid var(--accent-amber); padding:10px;">
+      <div style="font-size:11px; color:var(--text-secondary);"><strong style="color:var(--accent-amber);">Action:</strong> Most WPs only have the SA-* architecture epic + a "Delivery" placeholder. Per the FINAL-PLAN, each WP needs team-specific epics for every contributing domain.</div>
+    </div>
+  </div>
+
+  <div class="slide-number">15 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 16: JIRA EPIC PROGRESS PER WP (detail) -->
+<div class="slide">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+    <h2 style="margin:0;">Epic Progress Per Work Package</h2>
+    <span class="tag tag-blue">SBK-669 &bull; Live from Jira</span>
+  </div>
+  <p class="subtitle" style="margin-bottom:12px;">Each team epic with child ticket breakdown: To Do / In Progress / Done. Progress bar shows % complete.</p>
+
+  <table style="font-size:11px;">
+    <tr>
+      <th style="min-width:160px;">Epic</th>
+      <th style="min-width:110px;">Team</th>
+      <th style="min-width:50px; text-align:center;">Tickets</th>
+      <th style="min-width:280px;">Progress</th>
+      <th style="text-align:center; min-width:50px;">Done %</th>
+      <th style="min-width:80px;">Status</th>
+    </tr>
+    <!-- SBK-1951 FE Straight Bet -->
+    <tr>
+      <td>[FE] Straight Bet<br><span style="font-size:9px; color:var(--text-muted);">SBK-1951</span></td>
+      <td><span class="team-badge team-frontend" style="font-size:10px;">Frontend</span></td>
+      <td style="text-align:center; font-weight:700;"> 39</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width: 59%; background:var(--accent-green);" title="Done: 13"></div>
+          <div style="width: 38.5%; background:var(--accent-blue);" title="In Progress: 13"></div>
+          <div style="width: 2.5%; background:#64748b;" title="To Do: 13"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
+          <span><span style="color:var(--accent-green);">&#9632;</span>  23 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  15 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  1 To Do</span>
+        </div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);">59%</td>
+      <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+    </tr>
+    <!-- SBK-2199 BE Simple Parlay -->
+    <tr>
+      <td>[BE] Simple Parlay<br><span style="font-size:9px; color:var(--text-muted);">SBK-2199</span></td>
+      <td><span class="team-badge team-betting" style="font-size:10px;">Betting Engine</span></td>
+      <td style="text-align:center; font-weight:700;"> 34</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width: 85%; background:var(--accent-green);" title="Done: 11"></div>
+          <div style="width: 15%; background:var(--accent-blue);" title="In Progress: 15"></div>
+          <div style="width: 0%; background:#64748b;" title="To Do: 8"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
+          <span><span style="color:var(--accent-green);">&#9632;</span>  29 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  5 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+        </div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);">85%</td>
+      <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+    </tr>
+    <!-- SBK-3006 BE Central Offer -->
+    <tr>
+      <td>[BE] Central Offer Foundation<br><span style="font-size:9px; color:var(--text-muted);">SBK-3006</span></td>
+      <td><span class="team-badge team-offer" style="font-size:10px;">Offer Mgmt</span></td>
+      <td style="text-align:center; font-weight:700;"> 17</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width: 59%; background:var(--accent-green);" title="Done: 1"></div>
+          <div style="width: 41%; background:var(--accent-blue);" title="In Progress: 8"></div>
+          <div style="width: 0%; background:#64748b;" title="To Do: 8"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
+          <span><span style="color:var(--accent-green);">&#9632;</span>  10 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  7 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+        </div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);">59%</td>
+      <td><span class="status-pill status-scope" style="font-size:10px;">Scoping</span></td>
+    </tr>
+    <!-- SBK-1897 Feeds Market Parser -->
+    <tr>
+      <td>[WC] Market Parser Digestion<br><span style="font-size:9px; color:var(--text-muted);">SBK-1897</span></td>
+      <td><span class="team-badge team-feeds" style="font-size:10px;">Feeds Mgmt</span></td>
+      <td style="text-align:center; font-weight:700;"> 11</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width: 91%; background:var(--accent-green);" title="Done: 5"></div>
+          <div style="width: 9%; background:var(--accent-blue);" title="In Progress: 1"></div>
+          <div style="width: 0%; background:#64748b;" title="To Do: 5"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
+          <span><span style="color:var(--accent-green);">&#9632;</span>  10 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  1 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+        </div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);">91%</td>
+      <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+    </tr>
+    <!-- SBK-3094 Feeds Health -->
+    <tr>
+      <td>[BE] Feed Provider Health<br><span style="font-size:9px; color:var(--text-muted);">SBK-3094</span></td>
+      <td><span class="team-badge team-feeds" style="font-size:10px;">Feeds Integ</span></td>
+      <td style="text-align:center; font-weight:700;"> 10</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width: 40%; background:var(--accent-green);" title="Done: 0"></div>
+          <div style="width: 30%; background:var(--accent-blue);" title="In Progress: 4"></div>
+          <div style="width: 30%; background:#64748b;" title="To Do: 6"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
+          <span><span style="color:var(--accent-green);">&#9632;</span>  4 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  3 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  3 To Do</span>
+        </div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-amber);">40%</td>
+      <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+    </tr>
+    <!-- SBK-2200 BE Settlement -->
+    <tr>
+      <td>[BE] Settlement from Optic Odds<br><span style="font-size:9px; color:var(--text-muted);">SBK-2200</span></td>
+      <td><span style="padding:3px 8px; border-radius:6px; font-size:10px; background:rgba(100,116,139,0.12); color:#94a3b8;">Delivery</span></td>
+      <td style="text-align:center; font-weight:700;"> 9</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width: 67%; background:var(--accent-green);" title="Done: 0"></div>
+          <div style="width: 33%; background:var(--accent-blue);" title="In Progress: 3"></div>
+          <div style="width: 0%; background:#64748b;" title="To Do: 6"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
+          <span><span style="color:var(--accent-green);">&#9632;</span>  6 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  3 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+        </div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);">67%</td>
+      <td><span class="status-pill" style="font-size:10px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span></td>
+    </tr>
+    <!-- SBK-2189 Soccer WC Hub -->
+    <tr>
+      <td>Soccer World Cup Hub<br><span style="font-size:9px; color:var(--text-muted);">SBK-2189</span></td>
+      <td><span style="padding:3px 8px; border-radius:6px; font-size:10px; background:rgba(100,116,139,0.12); color:#94a3b8;">Delivery</span></td>
+      <td style="text-align:center; font-weight:700;">9</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:#64748b;">
+        </div>
+        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:#64748b;">&#9632;</span> 9 To Do</div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-red);">0%</td>
+      <td><span class="status-pill" style="font-size:10px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span></td>
+    </tr>
+    <!-- DATA-22 Bet Ticker/History -->
+    <tr>
+      <td>FUTURO - Bet Ticker/History<br><span style="font-size:9px; color:var(--text-muted);">DATA-22</span></td>
+      <td><span class="team-badge team-data" style="font-size:10px;">Data</span></td>
+      <td style="text-align:center; font-weight:700;"> 9</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width:100%; background:var(--accent-blue);" title="In Progress: 1"></div>
+        </div>
+        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:var(--accent-blue);">&#9632;</span>  5 In Prog</span> <span><span style="color:#64748b;">&#9632;</span> 4 To Do</div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-red);">0%</td>
+      <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
+    </tr>
+    <!-- SBK-3516 Resulting -->
+    <tr>
+      <td>Resulting for Pre Game Markets<br><span style="font-size:9px; color:var(--text-muted);">SBK-3516</span></td>
+      <td><span class="team-badge team-feeds" style="font-size:10px;">Feeds Mgmt</span></td>
+      <td style="text-align:center; font-weight:700;">1</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:#64748b;"></div>
+        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:#64748b;">&#9632;</span> 1 To Do</div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-red);">0%</td>
+      <td><span class="status-pill status-scope" style="font-size:10px;">Scoping</span></td>
+    </tr>
+    <!-- SBK-3790 QA -->
+    <tr>
+      <td>[QA] Straight Bet E2E Validation<br><span style="font-size:9px; color:var(--text-muted);">SBK-3790</span></td>
+      <td><span style="padding:3px 8px; border-radius:6px; font-size:10px; background:rgba(79,140,255,0.12); color:var(--accent-blue);">BE QAs</span></td>
+      <td style="text-align:center; font-weight:700;">1</td>
+      <td>
+        <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
+          <div style="width:100%; background:var(--accent-blue);" title="In Progress: 1"></div>
+        </div>
+        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:var(--accent-blue);">&#9632;</span> 1 In Prog</div>
+      </td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-red);">0%</td>
+      <td><span class="status-pill" style="font-size:10px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span></td>
+    </tr>
+  </table>
+
+  <!-- Totals -->
+  <div style="display:flex; gap:12px; margin-top:12px;">
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-green); padding:10px; text-align:center;">
+      <div style="font-size:22px; font-weight:800; color:var(--accent-green);"> 82</div>
+      <div style="font-size:10px; color:var(--text-muted);">DONE</div>
+    </div>
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-blue); padding:10px; text-align:center;">
+      <div style="font-size:22px; font-weight:800; color:var(--accent-blue);"> 39</div>
+      <div style="font-size:10px; color:var(--text-muted);">IN PROGRESS</div>
+    </div>
+    <div class="card" style="flex:1; border-top:2px solid #64748b; padding:10px; text-align:center;">
+      <div style="font-size:22px; font-weight:800; color:#94a3b8;"> 18</div>
+      <div style="font-size:10px; color:var(--text-muted);">TO DO</div>
+    </div>
+    <div class="card" style="flex:1; border-top:2px solid var(--text-primary); padding:10px; text-align:center;">
+      <div style="font-size:22px; font-weight:800;"> 139</div>
+      <div style="font-size:10px; color:var(--text-muted);">TOTAL TICKETS</div>
+    </div>
+    <div class="card" style="flex:1.5; padding:10px; text-align:center;">
+      <div style="display:flex; gap:1px; height:18px; border-radius:4px; overflow:hidden; margin-bottom:4px;">
+        <div style="width:22.7%; background:var(--accent-green);"></div>
+        <div style="width:36.4%; background:var(--accent-blue);"></div>
+        <div style="width:40.9%; background:#64748b;"></div>
+      </div>
+      <div style="font-size:14px; font-weight:800; color:var(--accent-green);">59% Overall Complete</div>
+    </div>
+  </div>
+
+  <div class="slide-number">16 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 17: EPIC TIMELINE / GANTT -->
+<div class="slide">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+    <h2 style="margin:0;">Epic Timeline — March to August 2026</h2>
+    <span class="tag tag-blue">Start &amp; Due dates from Jira</span>
+  </div>
+  <p class="subtitle" style="margin-bottom:8px;">Delivery epics only (not architecture SA-* epics). Bars show start→due date range. Grey = no due date set.</p>
+
+  <!-- Month headers -->
+  <div style="display:flex; margin-bottom:0;">
+    <div style="min-width:200px;"></div>
+    <div style="flex:1; display:flex; border-bottom:1px solid var(--border);">
+      <div style="flex:1; text-align:center; padding:4px 0; font-size:10px; font-weight:600; color:var(--text-muted); border-right:1px solid rgba(45,51,72,0.5);">FEB</div>
+      <div style="flex:1; text-align:center; padding:4px 0; font-size:10px; font-weight:600; color:var(--accent-green); border-right:1px solid rgba(45,51,72,0.5);">MAR</div>
+      <div style="flex:1; text-align:center; padding:4px 0; font-size:10px; font-weight:600; color:var(--text-secondary); border-right:1px solid rgba(45,51,72,0.5);">APR</div>
+      <div style="flex:1; text-align:center; padding:4px 0; font-size:10px; font-weight:600; color:var(--text-secondary); border-right:1px solid rgba(45,51,72,0.5);">MAY</div>
+      <div style="flex:1; text-align:center; padding:4px 0; font-size:10px; font-weight:600; color:var(--text-secondary); border-right:1px solid rgba(45,51,72,0.5);">JUN</div>
+      <div style="flex:1; text-align:center; padding:4px 0; font-size:10px; font-weight:600; color:var(--text-secondary);">JUL-AUG</div>
+    </div>
+  </div>
+
+  <!-- Today marker label -->
+  <div style="display:flex; margin-bottom:2px;">
+    <div style="min-width:200px;"></div>
+    <div style="flex:1; position:relative;">
+      <!-- Today = Mar 25 ≈ 30% through the 6-month range (Feb1-Aug1) -->
+      <div style="position:absolute; left:33%; top:0; font-size:8px; color:var(--accent-amber); font-weight:600; transform:translateX(-50%);">TODAY</div>
+    </div>
+  </div>
+
+  <!-- Epic rows -->
+  <div style="display:flex; flex-direction:column; gap:2px; font-size:11px;">
+
+    <!-- SBK-3006 Central Offer — Feb 11 to Apr 15 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span class="team-badge team-offer" style="font-size:8px; padding:2px 6px;">Offer</span>
+        <span style="font-size:10px; color:var(--text-primary);">Central Offer</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-3006</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:5.5%; width:36%; height:100%; background:var(--accent-purple); border-radius:3px; opacity:0.8;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-2189 Soccer WC Hub — Feb 11 to Apr 29 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span style="padding:2px 6px; border-radius:4px; font-size:8px; background:rgba(100,116,139,0.12); color:#94a3b8;">Delivery</span>
+        <span style="font-size:10px; color:var(--text-primary);">Soccer WC Hub</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-2189</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:5.5%; width:43%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-1951 FE Straight Bet — Feb 23 to May 1 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span class="team-badge team-frontend" style="font-size:8px; padding:2px 6px;">Frontend</span>
+        <span style="font-size:10px; color:var(--text-primary);">[FE] Straight Bet</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-1951</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:12.5%; width:37.5%; height:100%; background:var(--accent-cyan); border-radius:3px; opacity:0.8;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-2199 BE Simple Parlay — Feb 17 to Apr 20 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span class="team-badge team-betting" style="font-size:8px; padding:2px 6px;">Betting</span>
+        <span style="font-size:10px; color:var(--text-primary);">[BE] Simple Parlay</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-2199</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:9%; width:34%; height:100%; background:var(--accent-red); border-radius:3px; opacity:0.8;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-1897 Feeds Market Parser — Feb 17 to May 15 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span class="team-badge team-feeds" style="font-size:8px; padding:2px 6px;">Feeds Mgmt</span>
+        <span style="font-size:10px; color:var(--text-primary);">Market Parser</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-1897</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:9%; width:48%; height:100%; background:var(--accent-amber); border-radius:3px; opacity:0.8;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-3094 Feed Health — Mar 19 to Apr 30 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span class="team-badge team-feeds" style="font-size:8px; padding:2px 6px;">Feeds Integ</span>
+        <span style="font-size:10px; color:var(--text-primary);">[BE] Feed Health</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-3094</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:26%; width:23%; height:100%; background:var(--accent-amber); border-radius:3px; opacity:0.7;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-2219 My Bets — Mar 26 to Apr 22 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span style="padding:2px 6px; border-radius:4px; font-size:8px; background:rgba(100,116,139,0.12); color:#94a3b8;">Delivery</span>
+        <span style="font-size:10px; color:var(--text-primary);">[BE] My Bets</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-2219</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:30.5%; width:15%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-2200 BE Settlement — Mar 17 to May 6 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span style="padding:2px 6px; border-radius:4px; font-size:8px; background:rgba(100,116,139,0.12); color:#94a3b8;">Delivery</span>
+        <span style="font-size:10px; color:var(--text-primary);">[BE] Settlement</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-2200</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:25%; width:27%; height:100%; background:var(--accent-blue); border-radius:3px; opacity:0.7;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-3790 QA Straight Bet — Mar 16 to May 1 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span style="padding:2px 6px; border-radius:4px; font-size:8px; background:rgba(79,140,255,0.12); color:var(--accent-blue);">BE QAs</span>
+        <span style="font-size:10px; color:var(--text-primary);">[QA] Straight Bet E2E</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-3790</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:24.5%; width:25%; height:100%; background:var(--accent-blue); border-radius:3px; opacity:0.6;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-2215 Manual Resettlement — Apr 8 to May 25 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span style="padding:2px 6px; border-radius:4px; font-size:8px; background:rgba(100,116,139,0.12); color:#94a3b8;">Delivery</span>
+        <span style="font-size:10px; color:var(--text-primary);">[BE] Manual Resettlement</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-2215</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:37%; width:26%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- SBK-2202 Bet Placement Controls — Apr 20 to May 11 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span style="padding:2px 6px; border-radius:4px; font-size:8px; background:rgba(100,116,139,0.12); color:#94a3b8;">Delivery</span>
+        <span style="font-size:10px; color:var(--text-primary);">[BE] Bet Controls</span>
+        <span style="font-size:8px; color:var(--text-muted);">SBK-2202</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:43%; width:11.5%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- DATA-22 Bet Ticker/History — Feb 23 to Jun 1 -->
+    <div style="display:flex; align-items:center; height:22px;">
+      <div style="min-width:200px; display:flex; align-items:center; gap:6px;">
+        <span class="team-badge team-data" style="font-size:8px; padding:2px 6px;">Data</span>
+        <span style="font-size:10px; color:var(--text-primary);">Bet Ticker / History</span>
+        <span style="font-size:8px; color:var(--text-muted);">DATA-22</span>
+      </div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:12.5%; width:54%; height:100%; background:var(--accent-green); border-radius:3px; opacity:0.7;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+
+    <!-- No-date epics -->
+    <div style="display:flex; align-items:center; height:22px; margin-top:4px; border-top:1px solid var(--border); padding-top:4px;">
+      <div style="min-width:200px; font-size:10px; color:var(--text-muted);">No due date: Book On/Off, RT Odds, RT Liability, Bet Ticker, Bet History, Audit Trail</div>
+      <div style="flex:1; position:relative; height:14px;">
+        <div style="position:absolute; left:5%; right:5%; height:100%; background:repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(100,116,139,0.15) 8px, rgba(100,116,139,0.15) 16px); border-radius:3px;"></div>
+        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key milestones -->
+  <div style="display:flex; gap:12px; margin-top:12px;">
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-green); padding:8px 12px; text-align:center;">
+      <div style="font-size:14px; font-weight:700; color:var(--accent-green);">Apr 1</div>
+      <div style="font-size:9px; color:var(--text-muted);">SOFT LAUNCH</div>
+    </div>
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-blue); padding:8px 12px; text-align:center;">
+      <div style="font-size:14px; font-weight:700; color:var(--accent-blue);">May 1</div>
+      <div style="font-size:9px; color:var(--text-muted);">GO-LIVE</div>
+    </div>
+    <div class="card" style="flex:1; border-top:2px solid var(--accent-amber); padding:8px 12px; text-align:center;">
+      <div style="font-size:14px; font-weight:700; color:var(--accent-amber);">Mid-June</div>
+      <div style="font-size:9px; color:var(--text-muted);">WORLD CUP</div>
+    </div>
+    <div class="card" style="flex:2; border-left:3px solid var(--accent-red); padding:8px 12px;">
+      <div style="font-size:11px; color:var(--text-secondary);"><strong style="color:var(--accent-red);">6 delivery epics have no due date</strong> — these need dates set to enable timeline planning. Feeds Market Parser (May 15) and Data Bet Ticker (Jun 1) are the longest-running epics.</div>
+    </div>
+  </div>
+
+  <div class="slide-number">17 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 18: DEPENDENCY MAP -->
+<div class="slide">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+    <h2 style="margin:0;">Epic Dependency Map</h2>
+    <span class="tag tag-blue">From Jira "blocks" links</span>
+  </div>
+  <p class="subtitle" style="margin-bottom:16px;">Three independent dependency chains. An epic cannot start until its blocker is complete.</p>
+
+  <div style="display:flex; gap:24px;">
+
+    <!-- CHAIN 1: Offer/Hub chain -->
+    <div style="flex:1;">
+      <h3 style="color:var(--accent-blue); margin-bottom:12px;">Chain 1: Offer &amp; Hub Foundation</h3>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+        <!-- SA-66 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(167,139,250,0.1); border:1px solid rgba(167,139,250,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-purple);">SA-66 Central Offer Foundation</div>
+          <div style="font-size:10px; color:var(--text-muted);">Offer Management &bull; Due: Apr 15</div>
+          <span class="status-pill status-delivery" style="font-size:9px; margin-top:4px;">In Delivery</span>
+        </div>
+        <div style="font-size:16px; color:var(--text-muted);">&#9660;</div>
+        <!-- SA-14 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(79,140,255,0.1); border:1px solid rgba(79,140,255,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-blue);">SA-14 Soccer World Cup Hub</div>
+          <div style="font-size:10px; color:var(--text-muted);">Feeds + Offering &bull; Due: Apr 29</div>
+          <span class="status-pill status-delivery" style="font-size:9px; margin-top:4px;">In Delivery</span>
+        </div>
+        <div style="font-size:16px; color:var(--text-muted);">&#9660;</div>
+        <!-- Fan out: SA-19, SA-20, SA-21 -->
+        <div style="display:flex; gap:6px; width:100%;">
+          <div style="flex:1; padding:8px 6px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.2); border-radius:6px; text-align:center;">
+            <div style="font-size:10px; font-weight:600; color:var(--accent-cyan);">SA-19</div>
+            <div style="font-size:9px; color:var(--text-muted);">RT Odds Display</div>
+            <span class="status-pill status-handover" style="font-size:8px;">Ready</span>
+          </div>
+          <div style="flex:1; padding:8px 6px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.2); border-radius:6px; text-align:center;">
+            <div style="font-size:10px; font-weight:600; color:var(--accent-cyan);">SA-20</div>
+            <div style="font-size:9px; color:var(--text-muted);">Bet Controls</div>
+            <span class="status-pill status-delivery" style="font-size:8px;">In Del</span>
+          </div>
+          <div style="flex:1; padding:8px 6px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.2); border-radius:6px; text-align:center;">
+            <div style="font-size:10px; font-weight:600; color:var(--accent-cyan);">SA-21</div>
+            <div style="font-size:9px; color:var(--text-muted);">Book On/Off</div>
+            <span class="status-pill status-handover" style="font-size:8px;">Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAIN 2: Bet Types chain -->
+    <div style="flex:1;">
+      <h3 style="color:var(--accent-red); margin-bottom:12px;">Chain 2: Bet Types (v1.55 → v1.6)</h3>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+        <!-- SA-15 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-green);">SA-15 Straight Bet</div>
+          <div style="font-size:10px; color:var(--accent-green);">COMPLETED &bull; Post-Delivery Assessment</div>
+          <span class="status-pill status-done" style="font-size:9px; margin-top:4px;">Done</span>
+        </div>
+        <div style="font-size:16px; color:var(--text-muted);">&#9660;</div>
+        <!-- SA-17 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(248,113,113,0.1); border:1px solid rgba(248,113,113,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-red);">SA-17 Simple Parlay</div>
+          <div style="font-size:10px; color:var(--text-muted);">Betting Engine &bull; Due: Apr 20</div>
+          <span class="status-pill status-delivery" style="font-size:9px; margin-top:4px;">In Delivery</span>
+        </div>
+        <div style="font-size:16px; color:var(--text-muted);">&#9660;</div>
+        <!-- SA-16 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-amber);">SA-16 SGP</div>
+          <div style="font-size:10px; color:var(--accent-amber);">BLOCKED — Scope Validation</div>
+          <span class="status-pill status-scope" style="font-size:9px; margin-top:4px;">Scope</span>
+        </div>
+        <div style="font-size:16px; color:var(--text-muted);">&#9660;</div>
+        <!-- SA-18 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-amber);">SA-18 Mega Parlay</div>
+          <div style="font-size:10px; color:var(--accent-amber);">BLOCKED — Scope Validation</div>
+          <span class="status-pill status-scope" style="font-size:9px; margin-top:4px;">Scope</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAIN 3: Settlement chain + Independent -->
+    <div style="flex:1;">
+      <h3 style="color:var(--accent-purple); margin-bottom:12px;">Chain 3: Settlement + Independent</h3>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0;">
+        <!-- SA-22 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(167,139,250,0.1); border:1px solid rgba(167,139,250,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-purple);">SA-22 Settlement from Optic Odds</div>
+          <div style="font-size:10px; color:var(--text-muted);">Betting + Wallet &bull; Due: May 6</div>
+          <span class="status-pill status-delivery" style="font-size:9px; margin-top:4px;">In Delivery</span>
+        </div>
+        <div style="font-size:16px; color:var(--text-muted);">&#9660;</div>
+        <!-- SA-23 -->
+        <div style="width:100%; padding:10px 14px; background:rgba(79,140,255,0.1); border:1px solid rgba(79,140,255,0.3); border-radius:8px; text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--accent-blue);">SA-23 Manual Resettlement & Void</div>
+          <div style="font-size:10px; color:var(--text-muted);">Betting + BackOffice &bull; Due: May 25</div>
+          <span class="status-pill status-handover" style="font-size:9px; margin-top:4px;">Ready</span>
+        </div>
+      </div>
+
+      <!-- Independent WPs -->
+      <h3 style="color:var(--accent-green); margin:16px 0 8px;">No Dependencies (can start anytime)</h3>
+      <div style="display:flex; flex-wrap:wrap; gap:6px;">
+        <div style="padding:6px 10px; background:var(--bg-card); border:1px solid var(--border); border-radius:6px; text-align:center;">
+          <div style="font-size:10px; font-weight:600; color:var(--text-primary);">SA-24</div>
+          <div style="font-size:8px; color:var(--text-muted);">RT Liability</div>
+        </div>
+        <div style="padding:6px 10px; background:var(--bg-card); border:1px solid var(--border); border-radius:6px; text-align:center;">
+          <div style="font-size:10px; font-weight:600; color:var(--text-primary);">SA-25</div>
+          <div style="font-size:8px; color:var(--text-muted);">Bet Ticker</div>
+        </div>
+        <div style="padding:6px 10px; background:var(--bg-card); border:1px solid var(--border); border-radius:6px; text-align:center;">
+          <div style="font-size:10px; font-weight:600; color:var(--text-primary);">SA-26</div>
+          <div style="font-size:8px; color:var(--text-muted);">Bet History</div>
+        </div>
+        <div style="padding:6px 10px; background:var(--bg-card); border:1px solid var(--border); border-radius:6px; text-align:center;">
+          <div style="font-size:10px; font-weight:600; color:var(--text-primary);">SA-27</div>
+          <div style="font-size:8px; color:var(--text-muted);">My Bets</div>
+        </div>
+        <div style="padding:6px 10px; background:var(--bg-card); border:1px solid var(--border); border-radius:6px; text-align:center;">
+          <div style="font-size:10px; font-weight:600; color:var(--text-primary);">SA-28</div>
+          <div style="font-size:8px; color:var(--text-muted);">Audit Trail</div>
+        </div>
+        <div style="padding:6px 10px; background:var(--bg-card); border:1px solid var(--border); border-radius:6px; text-align:center;">
+          <div style="font-size:10px; font-weight:600; color:var(--text-primary);">SA-71</div>
+          <div style="font-size:8px; color:var(--text-muted);">Feed Health</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Key takeaway -->
+  <div style="display:flex; gap:12px; margin-top:16px;">
+    <div class="card" style="flex:1; border-left:3px solid var(--accent-red); padding:10px;">
+      <div style="font-size:11px; color:var(--text-secondary);"><strong style="color:var(--accent-red);">Critical path:</strong> SA-15 → SA-17 → SA-16 → SA-18 is the longest sequential chain (Straights → Parlay → SGP → Mega). SGP and Mega are blocked until Simple Parlay completes.</div>
+    </div>
+    <div class="card" style="flex:1; border-left:3px solid var(--accent-blue); padding:10px;">
+      <div style="font-size:11px; color:var(--text-secondary);"><strong style="color:var(--accent-blue);">Foundation chain:</strong> SA-66 → SA-14 gates three downstream WPs (RT Odds, Bet Controls, Book On/Off). Central Offer must land first.</div>
+    </div>
+    <div class="card" style="flex:1; border-left:3px solid var(--accent-green); padding:10px;">
+      <div style="font-size:11px; color:var(--text-secondary);"><strong style="color:var(--accent-green);">Parallelizable:</strong> 6 WPs have no blockers — RT Liability, Bet Ticker, Bet History, My Bets, Audit Trail, Feed Health. These can progress independently.</div>
+    </div>
+  </div>
+
+  <div class="slide-number">18 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+<!-- SLIDE 19: WHERE WE ARE & NEXT STEPS -->
+<div class="slide">
+  <h2>Where We Are & Next Steps</h2>
+
+  <div class="grid-2" style="gap:40px;">
+    <div>
+      <h3>Current Position in the Pipeline</h3>
+      <div style="margin-bottom:24px;">
+        <div style="display:flex; gap:4px; margin-bottom:16px; height:8px; border-radius:4px; overflow:hidden;">
+          <div style="flex:1; background:var(--accent-green);" title="Zoom 01"></div>
+          <div style="flex:1; background:var(--accent-blue); opacity:0.4;" title="Zoom 02"></div>
+          <div style="flex:1; background:var(--accent-purple); opacity:0.2;" title="Zoom 03"></div>
+          <div style="flex:1; background:var(--accent-amber); opacity:0.15;" title="Zoom 04"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted);">
+          <span style="color:var(--accent-green); font-weight:600;">Z01 Done</span>
+          <span style="color:var(--accent-blue); font-weight:600;">Z02 Starting</span>
+          <span>Z03 Pending</span>
+          <span>Z04 Pending</span>
+        </div>
+      </div>
+
+      <h3>WP Pipeline Status</h3>
+      <div style="display:flex; gap:4px; margin-bottom:8px; height:32px; border-radius:6px; overflow:hidden;">
+        <div style="flex:1; background:var(--accent-purple); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;" title="Completed">1</div>
+        <div style="flex:11; background:var(--accent-green); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;" title="In Delivery">11</div>
+        <div style="flex:4; background:var(--accent-blue); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;" title="Ready for Handover">4</div>
+        <div style="flex:2; background:var(--accent-amber); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;" title="Scope Validation">2</div>
+      </div>
+      <div style="display:flex; gap:16px; font-size:11px; color:var(--text-muted); margin-bottom:24px;">
+        <span><span style="color:var(--accent-purple);">&#9632;</span> Done (1)</span>
+        <span><span style="color:var(--accent-green);">&#9632;</span> In Delivery (11)</span>
+        <span><span style="color:var(--accent-blue);">&#9632;</span> Handover (4)</span>
+        <span><span style="color:var(--accent-amber);">&#9632;</span> Scope (2)</span>
+      </div>
+
+      <h3>Gate Requirements for Zoom Level 02</h3>
+      <table style="font-size:12px;">
+        <tr><th>WP Status</th><th>Count</th><th>Can start Z02?</th></tr>
+        <tr><td>In Delivery</td><td>11</td><td><span style="color:var(--accent-green);">Yes — architecture handed over</span></td></tr>
+        <tr><td>Ready for Handover</td><td>4</td><td><span style="color:var(--accent-blue);">Yes — once delivery picks up</span></td></tr>
+        <tr><td>Scope Validation</td><td>2</td><td><span style="color:var(--accent-red);">No — SGP + Mega Parlay blocked</span></td></tr>
+      </table>
+    </div>
+
+    <div>
+      <h3>Immediate Actions</h3>
+      <div class="card" style="margin-bottom:12px; border-left:3px solid var(--accent-red);">
+        <div style="font-weight:600; font-size:14px; margin-bottom:4px;">Unblock SGP & Mega Parlay</div>
+        <div style="font-size:13px; color:var(--text-secondary);">Architecture team to complete scope validation for SA-16 and SA-18 — currently blocking Zoom Level 02 for these WPs</div>
+      </div>
+      <div class="card" style="margin-bottom:12px; border-left:3px solid var(--accent-blue);">
+        <div style="font-weight:600; font-size:14px; margin-bottom:4px;">Start Zoom Level 02 for 15 WPs</div>
+        <div style="font-size:13px; color:var(--text-secondary);">DMs to fill in delivery order, T-shirt estimates (weeks), and cross-domain dependencies for the 15 WPs past architecture gate</div>
+      </div>
+      <div class="card" style="margin-bottom:12px; border-left:3px solid var(--accent-amber);">
+        <div style="font-weight:600; font-size:14px; margin-bottom:4px;">Platform Decision: Splunk vs New Relic</div>
+        <div style="font-size:13px; color:var(--text-secondary);">Affects 8+ reporting/audit WPs across Deliverables 2-4. Decision needed before Z02 estimates for Data team</div>
+      </div>
+      <div class="card" style="margin-bottom:12px; border-left:3px solid var(--accent-green);">
+        <div style="font-weight:600; font-size:14px; margin-bottom:4px;">Confirm External Timelines</div>
+        <div style="font-size:13px; color:var(--text-secondary);">WES Wallet (blocks 4 WPs) and PAM Auth (blocks 2 WPs) — integration timelines needed for Z02 dependency mapping</div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent-purple);">
+        <div style="font-weight:600; font-size:14px; margin-bottom:4px;">Pick Up 4 Handover WPs</div>
+        <div style="font-size:13px; color:var(--text-secondary);">RT Odds Display, Book On/Off Switch, Manual Resettlement, Audit Trail — architecture complete, waiting for delivery capacity</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">19 / 19</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit</div>
+</div>
+
+</body>
 </html>
