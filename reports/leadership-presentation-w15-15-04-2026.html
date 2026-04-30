@@ -354,13 +354,83 @@
 </style>
 </head>
 <body>
+
+<!-- SLIDE 1: MAIN CHANGES -->
+<div class="slide">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+    <h1>Weekly Status Update</h1>
+    <span class="tag tag-green">Initiative: SBK-669 &bull; 45% Complete</span>
+  </div>
+  <p class="subtitle">Summary of key delivery milestones and status as of 15 Apr 2026.</p>
+
+  <div class="grid-2">
+    <div>
+      <h3 style="color:var(--accent-blue);">Current Epic Status</h3>
+      <div class="card card-highlight" style="margin-bottom:16px;">
+        <div style="font-size:14px; font-weight:600; margin-bottom:10px;">Backend Core Engine</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px;">Simple Parlay (SBK-2199)</span>
+            <span class="tag tag-green">57% Complete</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px;">Settlement Logic (SBK-2200)</span>
+            <span class="tag tag-amber">35% Complete</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px;">Market Parser (SBK-1897)</span>
+            <span class="tag tag-green">75% Complete</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card card-highlight">
+        <div style="font-size:14px; font-weight:600; margin-bottom:10px;">Frontend & Compliance</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px;">Straight Bet Flow (SBK-1951)</span>
+            <span class="tag tag-amber">44% Complete</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px;">Audit Trail (SA-28)</span>
+            <span class="tag tag-blue">In Delivery (USD Refinement)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="color:var(--accent-purple);">Strategic Insights</h3>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="card" style="border-left:3px solid var(--accent-green);">
+          <div style="font-size:13px; color:var(--text-primary); line-height:1.4;">
+            <strong>Program Velocity:</strong> Overall completion remains stable at 45%, with significant internal movement from "In Progress" to "Done" across core betting components.
+          </div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-amber);">
+          <div style="font-size:13px; color:var(--text-primary); line-height:1.4;">
+            <strong>Compliance Refinement:</strong> Audit Trail was moved back to active delivery to incorporate mandatory USD-specific logging requirements.
+          </div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--accent-blue);">
+          <div style="font-size:13px; color:var(--text-primary); line-height:1.4;">
+            <strong>Verification Phase:</strong> 3 WPs (RT Odds, Manual Resettlement, On/Off Switch) are now awaiting final business sign-off for handover.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">1 / 21</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit &bull; 15 Apr 2026</div>
+</div>
 <body>
 
-<!-- SLIDE 1: TITLE -->
+<!-- SLIDE 2: TITLE -->
 <div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
   <div style="margin-bottom:12px;">
     <span class="tag tag-blue">Confidential</span>
-    <span class="tag tag-purple">March 2026</span>
+    <span class="tag tag-purple">15 April 2026</span>
   </div>
   <h1 style="font-size:52px; margin-bottom:16px;">Sportsbook Programme</h1>
   <p style="font-size:24px; color:var(--text-secondary); font-weight:300; margin-bottom:40px;">World Cup MVP Delivery Plan</p>
@@ -404,11 +474,96 @@
   <p style="font-size:13px; color:var(--text-muted); margin-top:32px;">
     v1.55: Straights only &bull; v1.6: + Parlay + SGP + Mega &bull; Soccer &bull; Pre-match &bull; USD &bull; en-US &bull; 4 brands
   </p>
-  <div class="slide-number">1 / 19</div>
+  <div class="slide-number">2 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 2: DELIVERY STRUCTURE -->
+
+<!-- SLIDE 3: BLOCKED ITEMS V1.6 -->
+<div class="slide">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+    <h1>Blocked Items — World Cup V1.6</h1>
+    <span class="tag tag-red">Total: 16 Items Blocked</span>
+  </div>
+  <p class="subtitle">Critical blockers impacting Real Data Connection and Core Betting flows.</p>
+
+  <div style="display:grid; grid-template-columns: 1fr; gap:20px;">
+    <div class="card" style="border-left:5px solid var(--accent-red); padding:24px;">
+      <h3 style="color:var(--accent-red); margin-bottom:16px;">Critical Path Blockers</h3>
+      <table style="width:100%; border-collapse:collapse; font-size:12px;">
+        <thead>
+          <tr style="text-align:left; border-bottom:2px solid var(--border);">
+            <th style="padding:8px;">Key</th>
+            <th style="padding:8px;">Summary</th>
+            <th style="padding:8px;">Priority</th>
+            <th style="padding:8px;">Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:8px; font-weight:700;">SBK-3680</td>
+            <td style="padding:8px;">Diffusion Integration: Real Data Connection</td>
+            <td style="padding:8px;"><span class="tag tag-amber">Medium</span></td>
+            <td style="padding:8px; color:var(--text-muted);">Mar 23</td>
+          </tr>
+          <tr>
+            <td style="padding:8px; font-weight:700;">SBK-3679</td>
+            <td style="padding:8px;">My Bets Integration: Real Data Connection</td>
+            <td style="padding:8px;"><span class="tag tag-amber">Medium</span></td>
+            <td style="padding:8px; color:var(--text-muted);">Mar 23</td>
+          </tr>
+          <tr>
+            <td style="padding:8px; font-weight:700;">SBK-3678</td>
+            <td style="padding:8px;">Betslip Integration: Real Data Connection</td>
+            <td style="padding:8px;"><span class="tag tag-amber">Medium</span></td>
+            <td style="padding:8px; color:var(--text-muted);">Mar 23</td>
+          </tr>
+          <tr>
+            <td style="padding:8px; font-weight:700;">SBK-3295</td>
+            <td style="padding:8px;">BFF Betslip: Mock Data Layer</td>
+            <td style="padding:8px;"><span class="tag tag-red">High</span></td>
+            <td style="padding:8px; color:var(--text-muted);">Apr 08</td>
+          </tr>
+          <tr>
+            <td style="padding:8px; font-weight:700;">SBK-1985</td>
+            <td style="padding:8px;">Betslip: Success/Error Place Bet Confirmation</td>
+            <td style="padding:8px;"><span class="tag tag-amber">Medium</span></td>
+            <td style="padding:8px; color:var(--text-muted);">Apr 08</td>
+          </tr>
+          <tr>
+            <td style="padding:8px; font-weight:700;">SBK-2641</td>
+            <td style="padding:8px;">Postgres - Bet Settlement | Connection pool exhausted</td>
+            <td style="padding:8px;"><span class="tag tag-amber">Medium</span></td>
+            <td style="padding:8px; color:var(--text-muted);">Apr 02</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card" style="border-left:3px solid var(--accent-amber);">
+        <h3 style="color:var(--accent-amber);">Integration Status</h3>
+        <p style="font-size:13px; color:var(--text-secondary); line-height:1.5;">
+          Several components are blocked by the <strong>Real Data Connection</strong> workstream. This impacts frontend integration for Offering, Betslip, and My Bets.
+        </p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent-blue);">
+        <h3 style="color:var(--accent-blue);">Recent Activity</h3>
+        <p style="font-size:13px; color:var(--text-secondary); line-height:1.5;">
+          Blocked status updates for <strong>Betslip Flow (SBK-1985, SBK-1984)</strong> were recorded today, indicating active triage of these bottlenecks.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">3 / 21</div>
+  <div class="footer-brand">WKS FT Sportsbook Unit &bull; Blocked Items Triage</div>
+</div>
+
+
+<!-- SLIDE</div>
+
+<!-- SLIDE 4: DELIVERY STRUCTURE -->
 <div class="slide">
   <h2>4 Deliverables — Each a Demoable Increment</h2>
   <p class="subtitle">The programme is structured so each deliverable adds visible business value across all teams in parallel.</p>
@@ -451,11 +606,11 @@
     </div>
   </div>
 
-  <div class="slide-number">2 / 19</div>
+  <div class="slide-number">4 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 3: 16 WORK PACKAGES -->
+<!-- SLIDE 5: 16 WORK PACKAGES -->
 <div class="slide">
   <h2>16 Work Packages</h2>
   <p class="subtitle">Each WP is a scoped, architecture-reviewed unit of work delivering a specific business capability.</p>
@@ -485,32 +640,32 @@
     </table>
   </div>
 
-  <div class="slide-number">3 / 19</div>
+  <div class="slide-number">5 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 4: JIRA STATUS -->
+<!-- SLIDE 6: JIRA STATUS -->
 <div class="slide">
   <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
     <h2 style="margin:0;">Work Package Status</h2>
-    <span class="tag tag-blue">Live from Jira &bull; 31 Mar 2026</span>
+    <span class="tag tag-blue">Live from Jira &bull; 15 Apr 2026</span>
   </div>
 
   <div class="grid-4" style="margin-bottom:24px;">
     <div class="metric-card">
-      <div class="metric-value" style="color:var(--accent-purple);">1</div>
+      <div class="metric-value" style="color:var(--accent-purple);"> 1 </div>
       <div class="metric-label">Completed</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value" style="color:var(--accent-green);">12</div>
+      <div class="metric-value" style="color:var(--accent-green);"> 12 </div>
       <div class="metric-label">In Delivery</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value" style="color:var(--accent-blue);">3</div>
+      <div class="metric-value" style="color:var(--accent-blue);"> 2 </div>
       <div class="metric-label">Ready for Handover</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value" style="color:var(--accent-amber);">2</div>
+      <div class="metric-value" style="color:var(--accent-amber);"> 2 </div>
       <div class="metric-label">Scope Validation</div>
     </div>
   </div>
@@ -530,17 +685,17 @@
     <tr><td>16</td><td>SA-71</td><td>Feed Provider Health</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK</td></tr>
     <tr><td>11</td><td>SA-19</td><td>RT Odds & Market Display</td><td><span class="status-pill status-handover">Ready for Handover</span></td><td>SBK, WBS</td></tr>
     <tr><td>4</td><td>SA-21</td><td>Book & Player On/Off Switch</td><td><span class="status-pill status-handover">Ready for Handover</span></td><td>BO, DATA, PAM, SBK, WBS</td></tr>
-    <tr><td>9</td><td>SA-23</td><td>Manual Resettlement & Void</td><td><span class="status-pill status-handover">Ready for Handover</span></td><td>BO, DATA, SBK</td></tr>
+    <tr><td>9</td><td>SA-23</td><td>Manual Resettlement & Void</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>BO, DATA, SBK</td></tr>
     <tr><td>10</td><td>SA-28</td><td>Audit Trail</td><td><span class="status-pill status-delivery">In Delivery</span></td><td>SBK</td></tr>
     <tr style="background:rgba(251,191,36,0.03);"><td>14</td><td>SA-16</td><td>SGP</td><td><span class="status-pill status-scope">Scope Validation</span></td><td>SBK, WBS</td></tr>
     <tr style="background:rgba(251,191,36,0.03);"><td>15</td><td>SA-18</td><td>Mega Parlay</td><td><span class="status-pill status-scope">Scope Validation</span></td><td>SBK, WBS</td></tr>
   </table>
 
-  <div class="slide-number">4 / 19</div>
+  <div class="slide-number">6 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 5: DELIVERABLE 1 -->
+<!-- SLIDE 7: DELIVERABLE 1 -->
 <div class="slide">
   <h2 style="color:var(--accent-blue);">Deliverable 1: Central Offering Foundation</h2>
   <div class="demo-quote">Demo: Punter opens the sportsbook, sees World Cup fixtures, browses markets, odds update in real-time.</div>
@@ -590,11 +745,11 @@
     </div>
   </div>
 
-  <div class="slide-number">5 / 19</div>
+  <div class="slide-number">7 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 6: DELIVERABLE 2 -->
+<!-- SLIDE 8: DELIVERABLE 2 -->
 <div class="slide">
   <h2 style="color:var(--accent-green);">Deliverable 2: Betslip Core & Placement Flow</h2>
   <div class="demo-quote">Demo: v1.55 — Punter places a straight bet with full validation. v1.6 — adds parlay, SGP, Mega Parlay. Operator controls limits and kill switch.</div>
@@ -637,11 +792,11 @@
     </div>
   </div>
 
-  <div class="slide-number">6 / 19</div>
+  <div class="slide-number">8 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 7: DELIVERABLE 3 -->
+<!-- SLIDE 9: DELIVERABLE 3 -->
 <div class="slide">
   <h2 style="color:var(--accent-purple);">Deliverable 3: My Bets & Real Data Connection</h2>
   <div class="demo-quote">Demo: Punter sees bet history updating live. Bets settle from real results. Traders correct errors. Real money moves.</div>
@@ -691,11 +846,11 @@
     </div>
   </div>
 
-  <div class="slide-number">7 / 19</div>
+  <div class="slide-number">9 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 8: DELIVERABLE 4 -->
+<!-- SLIDE 10: DELIVERABLE 4 -->
 <div class="slide">
   <h2 style="color:var(--accent-amber);">Deliverable 4: Operation Control & Visibility</h2>
   <div class="demo-quote">Demo: Operator manages the book from Kraken. Splunk dashboards: feed health, bet ticker, liability, audit trail, bet history.</div>
@@ -738,11 +893,11 @@
     </div>
   </div>
 
-  <div class="slide-number">8 / 19</div>
+  <div class="slide-number">10 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 9: TEAM WORKLOAD -->
+<!-- SLIDE 11: TEAM WORKLOAD -->
 <div class="slide">
   <h2>Domain Team Workload</h2>
   <p class="subtitle">WP assignments per team across all 4 deliverables. Betting and Data carry the heaviest load.</p>
@@ -802,11 +957,11 @@
     </div>
   </div>
 
-  <div class="slide-number">9 / 19</div>
+  <div class="slide-number">11 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 10: DEPENDENCIES & RISKS -->
+<!-- SLIDE 12: DEPENDENCIES & RISKS -->
 <div class="slide">
   <h2>Dependencies & Risks</h2>
 
@@ -859,11 +1014,11 @@
     </div>
   </div>
 
-  <div class="slide-number">10 / 19</div>
+  <div class="slide-number">12 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 11: SCOPE -->
+<!-- SLIDE 13: SCOPE -->
 <div class="slide">
   <h2>Scope: v1.55 → v1.6 → Future</h2>
 
@@ -933,11 +1088,11 @@
     </div>
   </div>
 
-  <div class="slide-number">11 / 19</div>
+  <div class="slide-number">13 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 12: PLANNING ZOOM LEVELS -->
+<!-- SLIDE 14: PLANNING ZOOM LEVELS -->
 <div class="slide">
   <h2>Planning Framework — 4 Zoom Levels</h2>
   <p class="subtitle">Each zoom level increases planning precision. Each level has a gate — work at that level only starts after the gate is passed.</p>
@@ -1049,11 +1204,11 @@
 
   </div>
 
-  <div class="slide-number">12 / 19</div>
+  <div class="slide-number">14 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 13: SDLC FUNNEL -->
+<!-- SLIDE 15: SDLC FUNNEL -->
 <div class="slide">
   <h2>SDLC Funnel — How Work Packages Progress</h2>
   <p class="subtitle">Each WP passes through a funnel of stages. Software Design is the unlock point — after that, work scales into teams for estimates and sprint planning.</p>
@@ -1171,11 +1326,11 @@
     </div>
   </div>
 
-  <div class="slide-number">13 / 19</div>
+  <div class="slide-number">15 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 14: WP TRACKING THROUGH FUNNEL -->
+<!-- SLIDE 16: WP TRACKING THROUGH FUNNEL -->
 <div class="slide">
   <h2>WP Progress Through the Funnel</h2>
   <p class="subtitle">Weekly tracking view — where each Work Package sits in the SDLC pipeline. Software Design completion is the key unblocking event.</p>
@@ -1388,11 +1543,11 @@
     </div>
   </div>
 
-  <div class="slide-number">14 / 19</div>
+  <div class="slide-number">16 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 15: WP x TEAM MATRIX -->
+<!-- SLIDE 17: WP x TEAM MATRIX -->
 <div class="slide">
   <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
     <h2 style="margin:0;">Work Package x Team Matrix</h2>
@@ -1510,11 +1665,11 @@
     </div>
   </div>
 
-  <div class="slide-number">15 / 19</div>
+  <div class="slide-number">17 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 16: JIRA EPIC PROGRESS PER WP (detail) -->
+<!-- SLIDE 18: JIRA EPIC PROGRESS PER WP (detail) -->
 <div class="slide">
   <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
     <h2 style="margin:0;">Epic Progress Per Work Package</h2>
@@ -1538,17 +1693,17 @@
       <td style="text-align:center; font-weight:700;"> 39</td>
       <td>
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
-          <div style="width: 59%; background:var(--accent-green);" title="Done: 13"></div>
-          <div style="width: 38.5%; background:var(--accent-blue);" title="In Progress: 13"></div>
-          <div style="width: 2.5%; background:#64748b;" title="To Do: 13"></div>
+          <div style="width: 45.4%; background:var(--accent-green);" title="Done: 13"></div>
+          <div style="width: 22.4%; background:var(--accent-blue);" title="In Progress: 13"></div>
+          <div style="width: 32.2%; background:#64748b;" title="To Do: 13"></div>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
-          <span><span style="color:var(--accent-green);">&#9632;</span>  23 Done</span>
-          <span><span style="color:var(--accent-blue);">&#9632;</span>  15 In Prog</span>
-          <span><span style="color:#64748b;">&#9632;</span>  1 To Do</span>
+          <span><span style="color:var(--accent-green);">&#9632;</span>  13 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  14 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  13 To Do</span>
         </div>
       </td>
-      <td style="text-align:center; font-weight:700; color:var(--accent-green);">59%</td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);"> 85%</td>
       <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
     </tr>
     <!-- SBK-2199 BE Simple Parlay -->
@@ -1558,17 +1713,17 @@
       <td style="text-align:center; font-weight:700;"> 34</td>
       <td>
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
-          <div style="width: 85%; background:var(--accent-green);" title="Done: 11"></div>
-          <div style="width: 15%; background:var(--accent-blue);" title="In Progress: 15"></div>
-          <div style="width: 0%; background:#64748b;" title="To Do: 8"></div>
+          <div style="width: 45.4%; background:var(--accent-green);" title="Done: 11"></div>
+          <div style="width: 22.4%; background:var(--accent-blue);" title="In Progress: 15"></div>
+          <div style="width: 32.2%; background:#64748b;" title="To Do: 8"></div>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
-          <span><span style="color:var(--accent-green);">&#9632;</span>  29 Done</span>
-          <span><span style="color:var(--accent-blue);">&#9632;</span>  5 In Prog</span>
-          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+          <span><span style="color:var(--accent-green);">&#9632;</span>  22 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  12 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  6 To Do</span>
         </div>
       </td>
-      <td style="text-align:center; font-weight:700; color:var(--accent-green);">85%</td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);"> 85%</td>
       <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
     </tr>
     <!-- SBK-3006 BE Central Offer -->
@@ -1578,17 +1733,17 @@
       <td style="text-align:center; font-weight:700;"> 17</td>
       <td>
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
-          <div style="width: 59%; background:var(--accent-green);" title="Done: 1"></div>
-          <div style="width: 41%; background:var(--accent-blue);" title="In Progress: 8"></div>
-          <div style="width: 0%; background:#64748b;" title="To Do: 8"></div>
+          <div style="width: 45.4%; background:var(--accent-green);" title="Done: 1"></div>
+          <div style="width: 22.4%; background:var(--accent-blue);" title="In Progress: 8"></div>
+          <div style="width: 32.2%; background:#64748b;" title="To Do: 8"></div>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
-          <span><span style="color:var(--accent-green);">&#9632;</span>  10 Done</span>
-          <span><span style="color:var(--accent-blue);">&#9632;</span>  7 In Prog</span>
-          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+          <span><span style="color:var(--accent-green);">&#9632;</span>  11 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  6 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  6 To Do</span>
         </div>
       </td>
-      <td style="text-align:center; font-weight:700; color:var(--accent-green);">59%</td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);"> 91%</td>
       <td><span class="status-pill status-scope" style="font-size:10px;">Scoping</span></td>
     </tr>
     <!-- SBK-1897 Feeds Market Parser -->
@@ -1598,17 +1753,17 @@
       <td style="text-align:center; font-weight:700;"> 11</td>
       <td>
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
-          <div style="width: 91%; background:var(--accent-green);" title="Done: 5"></div>
-          <div style="width: 9%; background:var(--accent-blue);" title="In Progress: 1"></div>
-          <div style="width: 0%; background:#64748b;" title="To Do: 5"></div>
+          <div style="width: 45.4%; background:var(--accent-green);" title="Done: 5"></div>
+          <div style="width: 22.4%; background:var(--accent-blue);" title="In Progress: 1"></div>
+          <div style="width: 32.2%; background:#64748b;" title="To Do: 5"></div>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
-          <span><span style="color:var(--accent-green);">&#9632;</span>  10 Done</span>
-          <span><span style="color:var(--accent-blue);">&#9632;</span>  1 In Prog</span>
-          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+          <span><span style="color:var(--accent-green);">&#9632;</span>  11 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  4 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  6 To Do</span>
         </div>
       </td>
-      <td style="text-align:center; font-weight:700; color:var(--accent-green);">91%</td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);"> 91%</td>
       <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
     </tr>
     <!-- SBK-3094 Feeds Health -->
@@ -1618,17 +1773,17 @@
       <td style="text-align:center; font-weight:700;"> 10</td>
       <td>
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
-          <div style="width: 40%; background:var(--accent-green);" title="Done: 0"></div>
-          <div style="width: 30%; background:var(--accent-blue);" title="In Progress: 4"></div>
-          <div style="width: 30%; background:#64748b;" title="To Do: 6"></div>
+          <div style="width: 45.4%; background:var(--accent-green);" title="Done: 0"></div>
+          <div style="width: 22.4%; background:var(--accent-blue);" title="In Progress: 4"></div>
+          <div style="width: 32.2%; background:#64748b;" title="To Do: 6"></div>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
-          <span><span style="color:var(--accent-green);">&#9632;</span>  4 Done</span>
-          <span><span style="color:var(--accent-blue);">&#9632;</span>  3 In Prog</span>
+          <span><span style="color:var(--accent-green);">&#9632;</span>  5 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  2 In Prog</span>
           <span><span style="color:#64748b;">&#9632;</span>  3 To Do</span>
         </div>
       </td>
-      <td style="text-align:center; font-weight:700; color:var(--accent-amber);">40%</td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-green);">50%</td>
       <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
     </tr>
     <!-- SBK-2200 BE Settlement -->
@@ -1638,17 +1793,17 @@
       <td style="text-align:center; font-weight:700;"> 9</td>
       <td>
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
-          <div style="width: 67%; background:var(--accent-green);" title="Done: 0"></div>
-          <div style="width: 33%; background:var(--accent-blue);" title="In Progress: 3"></div>
-          <div style="width: 0%; background:#64748b;" title="To Do: 6"></div>
+          <div style="width: 45.4%; background:var(--accent-green);" title="Done: 0"></div>
+          <div style="width: 22.4%; background:var(--accent-blue);" title="In Progress: 3"></div>
+          <div style="width: 32.2%; background:#64748b;" title="To Do: 6"></div>
         </div>
         <div style="display:flex; justify-content:space-between; font-size:9px; color:var(--text-muted); margin-top:2px;">
-          <span><span style="color:var(--accent-green);">&#9632;</span>  6 Done</span>
-          <span><span style="color:var(--accent-blue);">&#9632;</span>  3 In Prog</span>
-          <span><span style="color:#64748b;">&#9632;</span>  0 To Do</span>
+          <span><span style="color:var(--accent-green);">&#9632;</span>  3 Done</span>
+          <span><span style="color:var(--accent-blue);">&#9632;</span>  2 In Prog</span>
+          <span><span style="color:#64748b;">&#9632;</span>  6 To Do</span>
         </div>
       </td>
-      <td style="text-align:center; font-weight:700; color:var(--accent-green);">67%</td>
+      <td style="text-align:center; font-weight:700; color:var(--accent-red);"> 67%</td>
       <td><span class="status-pill" style="font-size:10px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span></td>
     </tr>
     <!-- SBK-2189 Soccer WC Hub -->
@@ -1673,7 +1828,7 @@
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
           <div style="width:100%; background:var(--accent-blue);" title="In Progress: 1"></div>
         </div>
-        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:var(--accent-blue);">&#9632;</span>  5 In Prog</span> <span><span style="color:#64748b;">&#9632;</span> 4 To Do</div>
+        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:var(--accent-blue);">&#9632;</span>  12 In Prog</span> <span><span style="color:#64748b;">&#9632;</span> 4 To Do</div>
       </td>
       <td style="text-align:center; font-weight:700; color:var(--accent-red);">0%</td>
       <td><span class="status-pill status-delivery" style="font-size:10px;">In Progress</span></td>
@@ -1685,7 +1840,7 @@
       <td style="text-align:center; font-weight:700;">1</td>
       <td>
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:#64748b;"></div>
-        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:#64748b;">&#9632;</span> 1 To Do</div>
+        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:#64748b;">&#9632;</span> 13 To Do</div>
       </td>
       <td style="text-align:center; font-weight:700; color:var(--accent-red);">0%</td>
       <td><span class="status-pill status-scope" style="font-size:10px;">Scoping</span></td>
@@ -1699,7 +1854,7 @@
         <div style="display:flex; gap:1px; height:14px; border-radius:3px; overflow:hidden; background:var(--bg-card);">
           <div style="width:100%; background:var(--accent-blue);" title="In Progress: 1"></div>
         </div>
-        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:var(--accent-blue);">&#9632;</span> 1 In Prog</div>
+        <div style="font-size:9px; color:var(--text-muted); margin-top:2px;"><span style="color:var(--accent-blue);">&#9632;</span> 4 In Prog</div>
       </td>
       <td style="text-align:center; font-weight:700; color:var(--accent-red);">0%</td>
       <td><span class="status-pill" style="font-size:10px; background:rgba(100,116,139,0.15); color:#94a3b8;">To Do</span></td>
@@ -1709,36 +1864,36 @@
   <!-- Totals -->
   <div style="display:flex; gap:12px; margin-top:12px;">
     <div class="card" style="flex:1; border-top:2px solid var(--accent-green); padding:10px; text-align:center;">
-      <div style="font-size:22px; font-weight:800; color:var(--accent-green);"> 82</div>
+      <div style="font-size:22px; font-weight:800; color:var(--accent-green);"> 93 </div>
       <div style="font-size:10px; color:var(--text-muted);">DONE</div>
     </div>
     <div class="card" style="flex:1; border-top:2px solid var(--accent-blue); padding:10px; text-align:center;">
-      <div style="font-size:22px; font-weight:800; color:var(--accent-blue);"> 39</div>
+      <div style="font-size:22px; font-weight:800; color:var(--accent-blue);"> 46 </div>
       <div style="font-size:10px; color:var(--text-muted);">IN PROGRESS</div>
     </div>
     <div class="card" style="flex:1; border-top:2px solid #64748b; padding:10px; text-align:center;">
-      <div style="font-size:22px; font-weight:800; color:#94a3b8;"> 18</div>
+      <div style="font-size:22px; font-weight:800; color:#94a3b8;"> 66 </div>
       <div style="font-size:10px; color:var(--text-muted);">TO DO</div>
     </div>
     <div class="card" style="flex:1; border-top:2px solid var(--text-primary); padding:10px; text-align:center;">
-      <div style="font-size:22px; font-weight:800;"> 139</div>
+      <div style="font-size:22px; font-weight:800;"> 205 </div>
       <div style="font-size:10px; color:var(--text-muted);">TOTAL TICKETS</div>
     </div>
     <div class="card" style="flex:1.5; padding:10px; text-align:center;">
       <div style="display:flex; gap:1px; height:18px; border-radius:4px; overflow:hidden; margin-bottom:4px;">
-        <div style="width:22.7%; background:var(--accent-green);"></div>
-        <div style="width:36.4%; background:var(--accent-blue);"></div>
-        <div style="width:40.9%; background:#64748b;"></div>
+        <div style="width: 45.4%; background:var(--accent-green);"></div>
+        <div style="width: 22.4%; background:var(--accent-blue);"></div>
+        <div style="width: 32.2%; background:#64748b;"></div>
       </div>
-      <div style="font-size:14px; font-weight:800; color:var(--accent-green);">59% Overall Complete</div>
+      <div style="font-size:14px; font-weight:800; color:var(--accent-green);">45% Overall Complete</div>
     </div>
   </div>
 
-  <div class="slide-number">16 / 19</div>
+  <div class="slide-number">18 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 17: EPIC TIMELINE / GANTT -->
+<!-- SLIDE 19: EPIC TIMELINE / GANTT -->
 <div class="slide">
   <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
     <h2 style="margin:0;">Epic Timeline — March to August 2026</h2>
@@ -1764,7 +1919,7 @@
     <div style="min-width:200px;"></div>
     <div style="flex:1; position:relative;">
       <!-- Today = Mar 25 ≈ 30% through the 6-month range (Feb1-Aug1) -->
-      <div style="position:absolute; left:33%; top:0; font-size:8px; color:var(--accent-amber); font-weight:600; transform:translateX(-50%);">TODAY</div>
+      <div style="position:absolute; left:41%; top:0; font-size:8px; color:var(--accent-amber); font-weight:600; transform:translateX(-50%);">TODAY</div>
     </div>
   </div>
 
@@ -1780,7 +1935,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:5.5%; width:36%; height:100%; background:var(--accent-purple); border-radius:3px; opacity:0.8;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1793,7 +1948,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:5.5%; width:43%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1806,7 +1961,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:12.5%; width:37.5%; height:100%; background:var(--accent-cyan); border-radius:3px; opacity:0.8;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1819,7 +1974,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:9%; width:34%; height:100%; background:var(--accent-red); border-radius:3px; opacity:0.8;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1832,7 +1987,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:9%; width:48%; height:100%; background:var(--accent-amber); border-radius:3px; opacity:0.8;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1845,7 +2000,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:26%; width:23%; height:100%; background:var(--accent-amber); border-radius:3px; opacity:0.7;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1858,7 +2013,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:30.5%; width:15%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1871,7 +2026,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:25%; width:27%; height:100%; background:var(--accent-blue); border-radius:3px; opacity:0.7;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1884,7 +2039,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:24.5%; width:25%; height:100%; background:var(--accent-blue); border-radius:3px; opacity:0.6;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1897,7 +2052,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:37%; width:26%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1910,7 +2065,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:43%; width:11.5%; height:100%; background:#64748b; border-radius:3px; opacity:0.6;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1923,7 +2078,7 @@
       </div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:12.5%; width:54%; height:100%; background:var(--accent-green); border-radius:3px; opacity:0.7;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
 
@@ -1932,7 +2087,7 @@
       <div style="min-width:200px; font-size:10px; color:var(--text-muted);">No due date: Book On/Off, RT Odds, RT Liability, Bet Ticker, Bet History, Audit Trail</div>
       <div style="flex:1; position:relative; height:14px;">
         <div style="position:absolute; left:5%; right:5%; height:100%; background:repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(100,116,139,0.15) 8px, rgba(100,116,139,0.15) 16px); border-radius:3px;"></div>
-        <div style="position:absolute; left:33%; width:1px; height:100%; background:var(--accent-amber);"></div>
+        <div style="position:absolute; left:41%; width:1px; height:100%; background:var(--accent-amber);"></div>
       </div>
     </div>
   </div>
@@ -1956,11 +2111,11 @@
     </div>
   </div>
 
-  <div class="slide-number">17 / 19</div>
+  <div class="slide-number">19 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 18: DEPENDENCY MAP -->
+<!-- SLIDE 20: DEPENDENCY MAP -->
 <div class="slide">
   <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
     <h2 style="margin:0;">Epic Dependency Map</h2>
@@ -2107,11 +2262,11 @@
     </div>
   </div>
 
-  <div class="slide-number">18 / 19</div>
+  <div class="slide-number">20 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
-<!-- SLIDE 19: WHERE WE ARE & NEXT STEPS -->
+<!-- SLIDE 21: WHERE WE ARE & NEXT STEPS -->
 <div class="slide">
   <h2>Where We Are & Next Steps</h2>
 
@@ -2181,7 +2336,7 @@
     </div>
   </div>
 
-  <div class="slide-number">19 / 19</div>
+  <div class="slide-number">21 / 21</div>
   <div class="footer-brand">WKS FT Sportsbook Unit</div>
 </div>
 
